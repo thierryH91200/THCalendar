@@ -69,6 +69,7 @@ class ViewController1: NSViewController {
         
         var attributes = [NSAttributedStringKey: AnyObject]()
         attributes[NSAttributedStringKey.foregroundColor] = NSColor.blue
+        
         var attributedString = NSAttributedString(string: "Previous month", attributes: attributes)
         previous.attributedTitle = attributedString
         
