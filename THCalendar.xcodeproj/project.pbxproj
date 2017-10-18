@@ -12,6 +12,20 @@
 		03725C901F978C350068EA12 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725C8E1F978C350068EA12 /* MainMenu.xib */; };
 		03725C9C1F978C350068EA12 /* THCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725C9B1F978C350068EA12 /* THCalendarTests.swift */; };
 		03725CA71F978C350068EA12 /* THCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CA61F978C350068EA12 /* THCalendarUITests.swift */; };
+		03725CB61F978C8F0068EA12 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CB41F978C8F0068EA12 /* ViewController1.swift */; };
+		03725CB71F978C8F0068EA12 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB51F978C8F0068EA12 /* ViewController1.xib */; };
+		03725CC21F978CA50068EA12 /* THWeekItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB81F978CA40068EA12 /* THWeekItem.xib */; };
+		03725CC31F978CA50068EA12 /* THCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB91F978CA40068EA12 /* THCalendarView.xib */; };
+		03725CC41F978CA50068EA12 /* THMonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBA1F978CA40068EA12 /* THMonthItem.swift */; };
+		03725CC51F978CA50068EA12 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBB1F978CA40068EA12 /* CollectionViewDataSource.swift */; };
+		03725CC61F978CA50068EA12 /* THMonthItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CBC1F978CA40068EA12 /* THMonthItem.xib */; };
+		03725CC71F978CA50068EA12 /* THDateItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CBD1F978CA40068EA12 /* THDateItem.xib */; };
+		03725CC81F978CA50068EA12 /* THCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBE1F978CA40068EA12 /* THCalendarView.swift */; };
+		03725CC91F978CA50068EA12 /* THWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBF1F978CA50068EA12 /* THWeekItem.swift */; };
+		03725CCA1F978CA50068EA12 /* THCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CC01F978CA50068EA12 /* THCalendar.swift */; };
+		03725CCB1F978CA50068EA12 /* THDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CC11F978CA50068EA12 /* THDateItem.swift */; };
+		03725CE81F978E320068EA12 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03725CDB1F978E1F0068EA12 /* SwiftDate.framework */; };
+		03725CE91F978E320068EA12 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03725CDB1F978E1F0068EA12 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +43,84 @@
 			remoteGlobalIDString = 03725C861F978C350068EA12;
 			remoteInfo = THCalendar;
 		};
+		03725CD81F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D97C1BEFF229002C0205;
+			remoteInfo = "SwiftDate-iOS";
+		};
+		03725CDA1F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6DA0F1BF000BD002C0205;
+			remoteInfo = "SwiftDate-macOS";
+		};
+		03725CDC1F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D9E21BEFFF6E002C0205;
+			remoteInfo = "SwiftDate-watchOS";
+		};
+		03725CDE1F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D9F01BEFFFBE002C0205;
+			remoteInfo = "SwiftDate-tvOS";
+		};
+		03725CE01F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D9861BEFF229002C0205;
+			remoteInfo = "SwiftDate-iOS Tests";
+		};
+		03725CE21F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD75027A1C68FCFC006590AF;
+			remoteInfo = "SwiftDate-macOS Tests";
+		};
+		03725CE41F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD75028D1C690C7A006590AF;
+			remoteInfo = "SwiftDate-tvOS Tests";
+		};
+		03725CE61F978E1F0068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 375F8FCD1F0EC70C00ECC0FD;
+			remoteInfo = TestApp;
+		};
+		03725CEA1F978E320068EA12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6DA0E1BF000BD002C0205;
+			remoteInfo = "SwiftDate-macOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		03725CEC1F978E320068EA12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				03725CE91F978E320068EA12 /* SwiftDate.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		03725C871F978C350068EA12 /* THCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +135,19 @@
 		03725CA21F978C350068EA12 /* THCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03725CA61F978C350068EA12 /* THCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THCalendarUITests.swift; sourceTree = "<group>"; };
 		03725CA81F978C350068EA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03725CB41F978C8F0068EA12 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		03725CB51F978C8F0068EA12 /* ViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
+		03725CB81F978CA40068EA12 /* THWeekItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THWeekItem.xib; sourceTree = "<group>"; };
+		03725CB91F978CA40068EA12 /* THCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THCalendarView.xib; sourceTree = "<group>"; };
+		03725CBA1F978CA40068EA12 /* THMonthItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THMonthItem.swift; sourceTree = "<group>"; };
+		03725CBB1F978CA40068EA12 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		03725CBC1F978CA40068EA12 /* THMonthItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THMonthItem.xib; sourceTree = "<group>"; };
+		03725CBD1F978CA40068EA12 /* THDateItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDateItem.xib; sourceTree = "<group>"; };
+		03725CBE1F978CA40068EA12 /* THCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalendarView.swift; sourceTree = "<group>"; };
+		03725CBF1F978CA50068EA12 /* THWeekItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THWeekItem.swift; sourceTree = "<group>"; };
+		03725CC01F978CA50068EA12 /* THCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalendar.swift; sourceTree = "<group>"; };
+		03725CC11F978CA50068EA12 /* THDateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THDateItem.swift; sourceTree = "<group>"; };
+		03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftDate.xcodeproj; path = "../../../Downloads/SwiftDate-master/SwiftDate.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03725CE81F978E320068EA12 /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +179,7 @@
 		03725C7E1F978C350068EA12 = {
 			isa = PBXGroup;
 			children = (
+				03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */,
 				03725C891F978C350068EA12 /* THCalendar */,
 				03725C9A1F978C350068EA12 /* THCalendarTests */,
 				03725CA51F978C350068EA12 /* THCalendarUITests */,
@@ -94,9 +200,12 @@
 		03725C891F978C350068EA12 /* THCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				03725CCC1F978CAE0068EA12 /* THCalendarView */,
 				03725C8A1F978C350068EA12 /* AppDelegate.swift */,
 				03725C8C1F978C350068EA12 /* Assets.xcassets */,
 				03725C8E1F978C350068EA12 /* MainMenu.xib */,
+				03725CB41F978C8F0068EA12 /* ViewController1.swift */,
+				03725CB51F978C8F0068EA12 /* ViewController1.xib */,
 				03725C911F978C350068EA12 /* Info.plist */,
 				03725C921F978C350068EA12 /* THCalendar.entitlements */,
 			);
@@ -121,6 +230,38 @@
 			path = THCalendarUITests;
 			sourceTree = "<group>";
 		};
+		03725CCC1F978CAE0068EA12 /* THCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				03725CBB1F978CA40068EA12 /* CollectionViewDataSource.swift */,
+				03725CC01F978CA50068EA12 /* THCalendar.swift */,
+				03725CBE1F978CA40068EA12 /* THCalendarView.swift */,
+				03725CB91F978CA40068EA12 /* THCalendarView.xib */,
+				03725CC11F978CA50068EA12 /* THDateItem.swift */,
+				03725CBD1F978CA40068EA12 /* THDateItem.xib */,
+				03725CBA1F978CA40068EA12 /* THMonthItem.swift */,
+				03725CBC1F978CA40068EA12 /* THMonthItem.xib */,
+				03725CBF1F978CA50068EA12 /* THWeekItem.swift */,
+				03725CB81F978CA40068EA12 /* THWeekItem.xib */,
+			);
+			path = THCalendarView;
+			sourceTree = "<group>";
+		};
+		03725CCE1F978E1E0068EA12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03725CD91F978E1F0068EA12 /* SwiftDate.framework */,
+				03725CDB1F978E1F0068EA12 /* SwiftDate.framework */,
+				03725CDD1F978E1F0068EA12 /* SwiftDate.framework */,
+				03725CDF1F978E1F0068EA12 /* SwiftDate.framework */,
+				03725CE11F978E1F0068EA12 /* SwiftDate-iOS Tests.xctest */,
+				03725CE31F978E1F0068EA12 /* SwiftDate-macOS Tests.xctest */,
+				03725CE51F978E1F0068EA12 /* SwiftDate-tvOS Tests.xctest */,
+				03725CE71F978E1F0068EA12 /* TestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,10 +272,12 @@
 				03725C831F978C350068EA12 /* Sources */,
 				03725C841F978C350068EA12 /* Frameworks */,
 				03725C851F978C350068EA12 /* Resources */,
+				03725CEC1F978E320068EA12 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				03725CEB1F978E320068EA12 /* PBXTargetDependency */,
 			);
 			name = THCalendar;
 			productName = THCalendar;
@@ -214,6 +357,12 @@
 			mainGroup = 03725C7E1F978C350068EA12;
 			productRefGroup = 03725C881F978C350068EA12 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 03725CCE1F978E1E0068EA12 /* Products */;
+					ProjectRef = 03725CCD1F978E1E0068EA12 /* SwiftDate.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				03725C861F978C350068EA12 /* THCalendar */,
@@ -223,13 +372,77 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		03725CD91F978E1F0068EA12 /* SwiftDate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftDate.framework;
+			remoteRef = 03725CD81F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CDB1F978E1F0068EA12 /* SwiftDate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftDate.framework;
+			remoteRef = 03725CDA1F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CDD1F978E1F0068EA12 /* SwiftDate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftDate.framework;
+			remoteRef = 03725CDC1F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CDF1F978E1F0068EA12 /* SwiftDate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftDate.framework;
+			remoteRef = 03725CDE1F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CE11F978E1F0068EA12 /* SwiftDate-iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftDate-iOS Tests.xctest";
+			remoteRef = 03725CE01F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CE31F978E1F0068EA12 /* SwiftDate-macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftDate-macOS Tests.xctest";
+			remoteRef = 03725CE21F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CE51F978E1F0068EA12 /* SwiftDate-tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftDate-tvOS Tests.xctest";
+			remoteRef = 03725CE41F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03725CE71F978E1F0068EA12 /* TestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestApp.app;
+			remoteRef = 03725CE61F978E1F0068EA12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		03725C851F978C350068EA12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03725CB71F978C8F0068EA12 /* ViewController1.xib in Resources */,
+				03725CC31F978CA50068EA12 /* THCalendarView.xib in Resources */,
 				03725C8D1F978C350068EA12 /* Assets.xcassets in Resources */,
+				03725CC21F978CA50068EA12 /* THWeekItem.xib in Resources */,
 				03725C901F978C350068EA12 /* MainMenu.xib in Resources */,
+				03725CC71F978CA50068EA12 /* THDateItem.xib in Resources */,
+				03725CC61F978CA50068EA12 /* THMonthItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +467,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03725CCA1F978CA50068EA12 /* THCalendar.swift in Sources */,
+				03725CB61F978C8F0068EA12 /* ViewController1.swift in Sources */,
+				03725CC41F978CA50068EA12 /* THMonthItem.swift in Sources */,
+				03725CC81F978CA50068EA12 /* THCalendarView.swift in Sources */,
+				03725CCB1F978CA50068EA12 /* THDateItem.swift in Sources */,
 				03725C8B1F978C350068EA12 /* AppDelegate.swift in Sources */,
+				03725CC91F978CA50068EA12 /* THWeekItem.swift in Sources */,
+				03725CC51F978CA50068EA12 /* CollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +506,11 @@
 			isa = PBXTargetDependency;
 			target = 03725C861F978C350068EA12 /* THCalendar */;
 			targetProxy = 03725CA31F978C350068EA12 /* PBXContainerItemProxy */;
+		};
+		03725CEB1F978E320068EA12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftDate-macOS";
+			targetProxy = 03725CEA1F978E320068EA12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -410,6 +635,7 @@
 		03725CAC1F978C350068EA12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = THCalendar/THCalendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -425,6 +651,7 @@
 		03725CAD1F978C350068EA12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = THCalendar/THCalendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
