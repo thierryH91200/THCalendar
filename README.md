@@ -26,7 +26,8 @@ preferences.calendar.beginWeek = .monday
 preferences.date.circleBackgroundColor = NSColor.yellow
 preferences.date.dotColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
 
-THCalendarView.globalPreferences = preferences```
+THCalendarView.globalPreferences = preferences
+```
 
 ## Add Calendar to the view hierarchy
 
