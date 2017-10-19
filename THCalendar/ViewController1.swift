@@ -36,22 +36,25 @@ class ViewController1: NSViewController {
     @IBOutlet weak var previous: NSButton!
     
     @IBOutlet weak var containerView: NSView!
+    
     let calendarView = THCalendarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
-        // Do any additional setup after loading the view.
-        
         // Step 1 - Override Style
-        var preferences = THCalendarView.Preferences()
-        preferences.calendar.backgroundColor = NSColor.systemGray
+        var preferences = THCalendarView.globalPreferences
+        
         preferences.calendar.textColor = NSColor.darkGray
+        preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
+        preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
+        preferences.calendar.borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
+        preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         
         preferences.date.circleBackgroundColor = NSColor.yellow
-        preferences.date.dotColor = NSColor.green
-        
+        preferences.date.dotColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+
         THCalendarView.globalPreferences = preferences
         
         // Step 2 - Add calendar to view hierarchy
@@ -112,127 +115,4 @@ class ViewController1: NSViewController {
             calendarView.collectionView.reloadData()
         }
     }
-    
-//    // MARK : KDCalendarDataSource
-//
-//    func startDate() -> Date? {
-//
-//        var dateComponents = DateComponents()
-//        dateComponents.month = -3
-//
-//        let today = Date()
-//
-//        let threeMonthsAgo = (self.calendarView.calendar as NSCalendar).date(byAdding: dateComponents, to: today, options: NSCalendar.Options())
-//
-//        return threeMonthsAgo
-//    }
-//
-//    func endDate() -> Date? {
-//
-//        var dateComponents = DateComponents()
-//
-//        dateComponents.year = 2;
-//        let today = Date()
-//
-//        let twoYearsFromNow = (self.calendarView.calendar as NSCalendar).date(byAdding: dateComponents, to: today, options: NSCalendar.Options())
-//
-//        return twoYearsFromNow
-//
-//    }
-    
-//    fileprivate var startOfMonthCache : Date = Date()
-//
-//
-//
-//    // MARK : Events
-//
-//    fileprivate var eventsByIndexPath : [IndexPath:[CalendarEvent]] = [IndexPath:[CalendarEvent]]()
-//    var events : [EKEvent]? {
-//
-//        didSet {
-//
-//            eventsByIndexPath = [IndexPath:[CalendarEvent]]()
-//
-//            guard let events = events else {
-//                return
-//            }
-//
-//            let secondsFromGMTDifference = TimeInterval(NSTimeZone.local.secondsFromGMT())
-//
-//            for event in events {
-//
-//                if event.isOneDay == false {
-//                    return
-//                }
-//
-//                let flags: NSCalendar.Unit = [NSCalendar.Unit.month, NSCalendar.Unit.day]
-//
-//                let startDate = event.startDate.addingTimeInterval(secondsFromGMTDifference)
-//                let endDate = event.endDate.addingTimeInterval(secondsFromGMTDifference)
-//
-//                // Get the distance of the event from the start
-//                let distanceFromStartComponent = (self.gregorian as NSCalendar).components( flags, from:startOfMonthCache, to: startDate, options: NSCalendar.Options() )
-//
-//
-//                let calendarEvent = CalendarEvent(title: event.title, startDate: startDate, endDate: endDate)
-//
-//                let indexPath = IndexPath(item: distanceFromStartComponent.day!, section: distanceFromStartComponent.month!)
-//
-//                if (eventsByIndexPath[indexPath] != nil) {
-//
-//                    eventsByIndexPath[indexPath]?.append(calendarEvent)
-//
-//                } else {
-//
-//                    eventsByIndexPath[indexPath] = [calendarEvent]
-//
-//                }
-//
-//            }
-//
-//                calendarView.collectionView.reloadData()
-//        }
-//    }
-//
-//
-////    func loadEventsInCalendar() {
-////
-////        if let  startDate = self.startDate(),
-////            let endDate = self.endDate() {
-////
-////            let store = EKEventStore()
-////            
-////            let fetchEvents = { () -> Void in
-////                
-////                let predicate = store.predicateForEvents(withStart: startDate, end:endDate, calendars: nil)
-////                
-////                // if can return nil for no events between these dates
-////                if let eventsBetweenDates = store.events(matching: predicate) as [EKEvent]? {
-////                    self.calendarView.events = eventsBetweenDates
-////                }
-////
-////            }
-////
-////            // let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-////
-////            if EKEventStore.authorizationStatus(for: EKEntityType.event) != EKAuthorizationStatus.authorized {
-////
-////                store.requestAccess(to: EKEntityType.event, completion: {(granted, error ) -> Void in
-////                    if granted {
-////                        fetchEvents()
-////                    }
-////                })
-////                
-////            }
-////            else {
-////                fetchEvents()
-////            }
-////            
-////        }
-////
-////    }
-    
-
-    
-    
 }

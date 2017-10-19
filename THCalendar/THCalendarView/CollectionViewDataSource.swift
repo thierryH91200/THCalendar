@@ -85,32 +85,31 @@ extension THCalendarView: NSCollectionViewDataSource {
         var day: Int = 0
         var inMonth = false
 
-        
         let calendar = Calendar.current
 
         let start = date.startOfMonth()
-        
         let weekDay = calendar.component(.weekday, from: start) + 5
         
-        let interval = calendar.dateInterval(of: .month, for: date)!
-        let monthDays = calendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+        let monthDays = calendar.numberOfDaysInMonthForDate(date)
 
-        
 //        if weekDay > 7
 //        {
 //            weekDay = weekDay - 7
 //        }
         
+        // Previous month
         if item < weekDay
         {
             let day2 = calendar.prevStartOfMonthForDate(date)
             let day1 = calendar.numberOfDaysInMonthForDate(day2)
+            
             let day3 = dayForItem(item: item)
 
             day = day3 + day1
         }
         else
         {
+            // Current month
             if item - weekDay - 1 < monthDays - 1
             {
                 day = dayForItem(item: item)
@@ -118,6 +117,7 @@ extension THCalendarView: NSCollectionViewDataSource {
             }
             else
             {
+                // Next month
                 day = dayForItem(item: item) - monthDays
             }
         }

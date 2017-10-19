@@ -8,14 +8,10 @@
 
 import Cocoa
 
-let cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
-let cellColorToday = NSColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.3)
-let borderColor = NSColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.8)
 
 
 class THDateItem: NSCollectionViewItem {
     
-    //    @IBOutlet weak var itemView: HNDateItemView!
     @IBOutlet weak var dateField: NSTextField!
     
     var circleLayer: CALayer!
@@ -40,7 +36,7 @@ class THDateItem: NSCollectionViewItem {
     var isToday : Bool = false {
         
         didSet {
-            backgroundViewLayer.backgroundColor = isToday ? cellColorToday.cgColor : cellColorDefault.cgColor
+            backgroundViewLayer.backgroundColor = isToday ? preferences.calendar.cellColorToday.cgColor : preferences.calendar.cellColorDefault.cgColor
         }
     }
     
@@ -57,7 +53,7 @@ class THDateItem: NSCollectionViewItem {
     
     func configure(day: Int, inCurrentMonth: Bool) {
         dateField.stringValue = "\(day)"
-        dateField.textColor = THCalendarView.globalPreferences.calendar.textColor
+        dateField.textColor = preferences.calendar.textColor
         dateField.alignment = .center
         
         self.inCurrentMonth = inCurrentMonth
@@ -111,11 +107,9 @@ class THDateItem: NSCollectionViewItem {
         backgroundViewLayer.frame = frame
         backgroundViewLayer.cornerRadius = 4.0
         
-        backgroundViewLayer.borderColor = borderColor.cgColor
+        backgroundViewLayer.borderColor = preferences.calendar.borderColor.cgColor
         backgroundViewLayer.borderWidth = 0.0
-        
-        backgroundViewLayer.backgroundColor = cellColorDefault.cgColor
-        
+                
         backgroundViewLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
         backgroundViewLayer.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
         view.layer?.addSublayer(backgroundViewLayer)

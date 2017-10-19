@@ -33,13 +33,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func initializeLibraryAndShowMainWindow() {
         
         viewController1 = ViewController1()
-        //        viewController1?.delegate = self
         
         myView.subviews.removeAll()
         myView.addSubview((viewController1?.view)!)
-        
-        //        myView.translatesAutoresizingMaskIntoConstraints = false
-        
         
     }
 }

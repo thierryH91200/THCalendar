@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class THCalendarView: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
@@ -15,8 +16,11 @@ class THCalendarView: NSViewController {
     public struct Preferences {
         
         public struct Calendar {
-            public var backgroundColor = NSColor.blue
             public var textColor = NSColor.black
+            public var cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
+            public var cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
+            public var borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
+            public var backgroundColors = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         }
         
         public struct Date {
@@ -59,24 +63,11 @@ class THCalendarView: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        collectionView.backgroundColors =  [#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)]
+        let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
+        collectionView.backgroundColors =  [colorBackGround]
 
     }
-    
-//    lazy var gregorian : Calendar = {
-//        
-//        var cal = Calendar(identifier: Calendar.Identifier.gregorian)
-//        cal.timeZone = TimeZone(abbreviation: "UTC")!
-//        
-//        return cal
-//    }()
-//
-//    
-//    var calendar : Calendar {
-//        return self.gregorian
-//    }
-
-    
+        
     func selectSelectedDateItem() {
 //        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
 //            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
