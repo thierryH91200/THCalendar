@@ -25,6 +25,7 @@
 		03725CC91F978CA50068EA12 /* THWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBF1F978CA50068EA12 /* THWeekItem.swift */; };
 		03725CCA1F978CA50068EA12 /* THCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CC01F978CA50068EA12 /* THCalendar.swift */; };
 		03725CCB1F978CA50068EA12 /* THDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CC11F978CA50068EA12 /* THDateItem.swift */; };
+		03ECFB551F9939C20032619D /* Capture d’écran 2017-10-19 à 21.47.01.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECFB541F9939C20032619D /* Capture d’écran 2017-10-19 à 21.47.01.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		03725CBF1F978CA50068EA12 /* THWeekItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THWeekItem.swift; sourceTree = "<group>"; };
 		03725CC01F978CA50068EA12 /* THCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalendar.swift; sourceTree = "<group>"; };
 		03725CC11F978CA50068EA12 /* THDateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THDateItem.swift; sourceTree = "<group>"; };
+		03ECFB541F9939C20032619D /* Capture d’écran 2017-10-19 à 21.47.01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capture d’écran 2017-10-19 à 21.47.01.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		03725C7E1F978C350068EA12 = {
 			isa = PBXGroup;
 			children = (
+				03ECFB541F9939C20032619D /* Capture d’écran 2017-10-19 à 21.47.01.png */,
 				03725C891F978C350068EA12 /* THCalendar */,
 				03725C9A1F978C350068EA12 /* THCalendarTests */,
 				03725CA51F978C350068EA12 /* THCalendarUITests */,
@@ -279,6 +282,7 @@
 				03725CC31F978CA50068EA12 /* THCalendarView.xib in Resources */,
 				03725C8D1F978C350068EA12 /* Assets.xcassets in Resources */,
 				03725CC21F978CA50068EA12 /* THWeekItem.xib in Resources */,
+				03ECFB551F9939C20032619D /* Capture d’écran 2017-10-19 à 21.47.01.png in Resources */,
 				03725C901F978C350068EA12 /* MainMenu.xib in Resources */,
 				03725CC71F978CA50068EA12 /* THDateItem.xib in Resources */,
 				03725CC61F978CA50068EA12 /* THMonthItem.xib in Resources */,
