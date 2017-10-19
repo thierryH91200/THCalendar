@@ -8,26 +8,6 @@
 
 import Cocoa
 
-//import EventKit
-//
-//@objc class CalendarEvent : NSObject {
-//    private(set) var title: String
-//    private(set) var startDate: Date
-//    private(set) var endDate:Date
-//    public init(title: String, startDate: Date, endDate: Date) {
-//        self.title = title;
-//        self.startDate = startDate;
-//        self.endDate = endDate;
-//    }
-//}
-//
-//extension EKEvent {
-//    var isOneDay : Bool {
-//        let components = (Calendar.current as NSCalendar).components([.era, .year, .month, .day], from: self.startDate, to: self.endDate, options: NSCalendar.Options())
-//        return (components.era == 0 && components.year == 0 && components.month == 0 && components.day == 0)
-//    }
-//}
-
 class ViewController1: NSViewController {
     
     @IBOutlet weak var toDay: NSButton!
