@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SwiftDate
 
 //import EventKit
 //
@@ -85,7 +84,10 @@ class ViewController1: NSViewController {
     func generateCounts() -> [Int] {
         
         var counts = [Int]()
-        for i in 0..<Date().monthDays {
+        let calendar = Calendar.current
+
+        let monthDays = calendar.numberOfDaysInMonthForDate(Date())
+        for i in 0..<monthDays {
             counts.append(i % 2)
         }
         return counts

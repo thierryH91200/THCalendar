@@ -8,8 +8,6 @@
 
 import Cocoa
 
-
-
 class THDateItem: NSCollectionViewItem {
     
     @IBOutlet weak var dateField: NSTextField!

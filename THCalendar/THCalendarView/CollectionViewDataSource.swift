@@ -30,19 +30,19 @@ extension THCalendarView: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
         var item: NSCollectionViewItem
-        
+        let calendar = Calendar.current
+
         switch Section(rawValue: indexPath.section)! {
         case .month:
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THMonthItem"), for: indexPath)
             
             if let item = item as? THMonthItem {
-                item.configure(month: THCalendar.Month[date.month - 1], year: date.year)
+                item.configure(month: THCalendar.Month[calendar.month(date) - 1], year: calendar.year(date))
             }
         case .week:
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THWeekItem"), for: indexPath)
             
             if let item = item as? THWeekItem {
-//                let week = HNCalendar.Week[indexPath.item]
                 let formatter = DateFormatter()
                 var index = indexPath.item + 1
                 if index == 7 {
@@ -65,15 +65,14 @@ extension THCalendarView: NSCollectionViewDataSource {
                     item.count = 0
                 }
                 let index = indexPathForDate(selectedDate: selectedDate)
-                let month = THCalendar.Month[date.month - 1]
-                let monthSelect = THCalendar.Month[Date().month - 1]
+                let month = THCalendar.Month[calendar.month(date) - 1]
+                let monthSelect = THCalendar.Month[calendar.month(Date()) - 1]
                 if indexPath.item == (index?.item)! + 6 && month ==  monthSelect {
                     item.isToday = true
                 } else
                 {
                     item.isToday = false
                 }
-                
             }
         }
         return item
@@ -103,7 +102,7 @@ extension THCalendarView: NSCollectionViewDataSource {
             let day2 = calendar.prevStartOfMonthForDate(date)
             let day1 = calendar.numberOfDaysInMonthForDate(day2)
             
-            let day3 = dayForItem(item: item)
+            let day3 = dayForItem(item: item, weekDay: weekDay)
 
             day = day3 + day1
         }
@@ -112,20 +111,20 @@ extension THCalendarView: NSCollectionViewDataSource {
             // Current month
             if item - weekDay - 1 < monthDays - 1
             {
-                day = dayForItem(item: item)
+                day = dayForItem(item: item, weekDay: weekDay)
                 inMonth = true
             }
             else
             {
                 // Next month
-                day = dayForItem(item: item) - monthDays
+                day = dayForItem(item: item, weekDay: weekDay) - monthDays
             }
         }
         return (day, inMonth)
     }
     
-    private func dayForItem(item: Int) -> Int {
-        let day = item - date.startOf(component: .month).weekday - 4
+    private func dayForItem(item: Int, weekDay: Int) -> Int {
+        let day = item - weekDay + 1
         return day
     }
 }

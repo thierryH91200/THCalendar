@@ -76,9 +76,13 @@ class THCalendarView: NSViewController {
     
     func indexPathForDate(selectedDate: Date) -> IndexPath? {
         
-        
-        if date.month == selectedDate.month {
-            let item = date.startOf(component: .month).weekday + selectedDate.day - 2
+        let calendar = Calendar.current
+
+        if calendar.month(date) == calendar.month(selectedDate) {
+            let start = date.startOfMonth()
+            let weekDay = calendar.component(.weekday, from: start)
+            
+            let item = weekDay + calendar.day(selectedDate) - 2
             let index = IndexPath(item: item, section: Section.date.rawValue)
             return index
         }
