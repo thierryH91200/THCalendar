@@ -38,9 +38,6 @@ class THMonthItem: NSCollectionViewItem {
 
         let yearTitle = NSAttributedString(string: "  \(year)", attributes : attributesYear )
 
-        
-        
-        
         title.append(yearTitle)
         
         monthField.attributedStringValue = title
