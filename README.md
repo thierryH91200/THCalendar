@@ -1,6 +1,6 @@
 # THCalendar
 
-# THCalendarView [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 CalendarView framework written in Swift for OS X
 
 # Usage
@@ -14,15 +14,19 @@ let calendarView = THCalendarView()
 ## Overriding Preferences
 
 ```
-var preferences = THCalendarView.Preferences()
-preferences.calendar.backgroundColor = NSColor.gray
-preferences.calendar.textColor = NSColor.white
+var preferences = THCalendarView.globalPreferences
+
+preferences.calendar.textColor = NSColor.darkGray
+preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
+preferences.calendar.cellColorToday = NSColor.darkGray
+preferences.calendar.borderColor = NSColor.red
+preferences.calendar.backgroundColors = NSColor.darkGray
+preferences.calendar.beginWeek = .monday
 
 preferences.date.circleBackgroundColor = NSColor.yellow
-preferences.date.dotColor = NSColor.green
+preferences.date.dotColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
 
-THCalendarView.globalPreferences = preferences
-```
+THCalendarView.globalPreferences = preferences```
 
 ## Add Calendar to the view hierarchy
 
