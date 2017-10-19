@@ -43,10 +43,12 @@ extension THCalendarView: NSCollectionViewDataSource {
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THWeekItem"), for: indexPath)
             
             if let item = item as? THWeekItem {
+                let beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue
+                let begin = 6 - beginWeek
                 let formatter = DateFormatter()
-                var index = indexPath.item + 1
-                if index == 7 {
-                    index  = 0
+                var index = indexPath.item + begin
+                if index >= 7 {
+                    index  = index - 7
                 }
                 let day = formatter.weekdaySymbols[index]
                 item.configure(week: day)
@@ -57,6 +59,11 @@ extension THCalendarView: NSCollectionViewDataSource {
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THDateItem"), for: indexPath)
             
             if let item = item as? THDateItem {
+                var beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue + 1
+                if beginWeek  == 7
+                {
+                    beginWeek = 0
+                }
                 item.configure(day: day, inCurrentMonth: inMonth)
                 
                 if let counts = counts, inMonth {
@@ -67,7 +74,7 @@ extension THCalendarView: NSCollectionViewDataSource {
                 let index = indexPathForDate(selectedDate: selectedDate)
                 let month = THCalendar.Month[calendar.month(date) - 1]
                 let monthSelect = THCalendar.Month[calendar.month(Date()) - 1]
-                if indexPath.item == (index?.item)! + 6 && month ==  monthSelect {
+                if indexPath.item == (index?.item)! + beginWeek && month ==  monthSelect {
                     item.isToday = true
                 } else
                 {
@@ -83,11 +90,13 @@ extension THCalendarView: NSCollectionViewDataSource {
         
         var day: Int = 0
         var inMonth = false
+        
+        let beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue
 
         let calendar = Calendar.current
 
         let start = date.startOfMonth()
-        var weekDay = calendar.component(.weekday, from: start) + 5
+        var weekDay = calendar.component(.weekday, from: start) + beginWeek
         
         let monthDays = calendar.numberOfDaysInMonthForDate(date)
 

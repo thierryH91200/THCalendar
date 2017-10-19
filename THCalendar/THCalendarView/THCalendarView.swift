@@ -21,6 +21,7 @@ class THCalendarView: NSViewController {
             public var cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
             public var borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
             public var backgroundColors = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            public var beginWeek : weekDisplay = .monday
         }
         
         public struct Date {
@@ -33,6 +34,20 @@ class THCalendarView: NSViewController {
         
         public init() {}
     }
+    
+    enum weekDisplay : Int {
+        
+        
+        case sunday = 6
+        case monday = 5
+        case tuesday = 4
+        case wednesday = 3
+        case thursday = 2
+        case friday = 1
+        case saturday = 0
+        
+    }
+    
     
     public static var globalPreferences = Preferences()
     

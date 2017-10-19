@@ -50,6 +50,7 @@ class ViewController1: NSViewController {
         preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
         preferences.calendar.borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
         preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        preferences.calendar.beginWeek = .monday
         
         preferences.date.circleBackgroundColor = NSColor.yellow
         preferences.date.dotColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
