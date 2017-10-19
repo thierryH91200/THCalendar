@@ -61,7 +61,6 @@ class ViewController1: NSViewController {
         
         // Step 3 - Set properties
         // Set selected date
-        calendarView.selectedDate = Date(timeIntervalSince1970 : 0)
         calendarView.selectedDate = Date()
 
         // Showing dots

@@ -20,5 +20,6 @@ class THWeekItem: NSCollectionViewItem {
     func configure(week: String) {
         weekField.stringValue = String(week.prefix(1)).uppercased() + String(week.dropFirst())
         weekField.textColor = THCalendarView.globalPreferences.calendar.textColor
+        weekField.alignment = .right
     }
 }

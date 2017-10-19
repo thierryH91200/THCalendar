@@ -29,7 +29,6 @@ class THMonthItem: NSCollectionViewItem {
         attributesMonth[.font] = NSFont(name: "Helvetica", size: 20.0)
         attributesMonth[.paragraphStyle] = paragraphStyle
         
-//        attributes[.accessibilityAlignment] = .center
         let title = NSMutableAttributedString(string: month, attributes: attributesMonth )
         
         var attributesYear = [NSAttributedStringKey: AnyObject]()

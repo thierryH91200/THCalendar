@@ -9,8 +9,6 @@
 import Foundation
 import Cocoa
 
-
-
 extension THCalendarView: NSCollectionViewDataSource {
     
     func numberOfSections(in: NSCollectionView) -> Int {
@@ -86,18 +84,34 @@ extension THCalendarView: NSCollectionViewDataSource {
         
         var day: Int = 0
         var inMonth = false
+
         
-        let weekDay = date.startOf(component: .month).weekday
-        let monthDays = date.monthDays
+        let calendar = Calendar.current
+
+        let start = date.startOfMonth()
         
-        if item < weekDay + 5
+        let weekDay = calendar.component(.weekday, from: start) + 5
+        
+        let interval = calendar.dateInterval(of: .month, for: date)!
+        let monthDays = calendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+
+        
+//        if weekDay > 7
+//        {
+//            weekDay = weekDay - 7
+//        }
+        
+        if item < weekDay
         {
-            let day1 = (1.months.from(date: date)?.monthDays)!
-            day = dayForItem(item: item) + day1
+            let day2 = calendar.prevStartOfMonthForDate(date)
+            let day1 = calendar.numberOfDaysInMonthForDate(day2)
+            let day3 = dayForItem(item: item)
+
+            day = day3 + day1
         }
         else
         {
-            if item - weekDay - 6 < monthDays - 1
+            if item - weekDay - 1 < monthDays - 1
             {
                 day = dayForItem(item: item)
                 inMonth = true
@@ -115,3 +129,14 @@ extension THCalendarView: NSCollectionViewDataSource {
         return day
     }
 }
+
+extension Date {
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+}
+
