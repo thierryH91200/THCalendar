@@ -14,6 +14,8 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
 
     var delegate: AppDelegate?
     var viewController1      = ViewController1()
+    
+    var preferences = THCalendarView.globalPreferences
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -24,8 +26,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         addSubview(subView: vc, toView: myView)
         
         setUpLayoutConstraints(item: vc, toItem: myView)
-        
-
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
@@ -53,6 +53,47 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
             NSLayoutConstraint(item: item, attribute: .bottom, relatedBy: .equal, toItem: toItem, attribute: .bottom, multiplier: 1, constant: 0)]
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
+    
+    @IBAction func changeColorText(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        preferences.calendar.textColor = color
+        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+    
+    @IBAction func cellColorDefault(_ sender : NSColorWell)
+    {
+//        var preferences = viewController1.calendarView.pre
+        let color = sender.color
+        preferences.calendar.cellColorDefault = color
+        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+    
+    @IBAction func cellColorToday(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        print(color)
+        preferences.calendar.cellColorToday = color
+        THCalendarView.globalPreferences = preferences
+        print(THCalendarView.globalPreferences )
+        viewController1.calendarView.collectionView.reloadData()
+    }
+
+    @IBAction func backgroundColors(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        print(color)
+
+        preferences.calendar.backgroundColors = color
+        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.backgroundColors =  [color]
+        viewController1.calendarView.collectionView.reloadData()
+    }
+
+
+
 
     
 }

@@ -10,10 +10,6 @@ import Cocoa
 
 class ViewController1: NSViewController {
     
-//    @IBOutlet weak var toDay: NSButton!
-//    @IBOutlet weak var nextMonth: NSButton!
-//    @IBOutlet weak var previous: NSButton!
-    
     @IBOutlet weak var containerView: NSView!
     
     let calendarView = THCalendarView()
@@ -27,8 +23,8 @@ class ViewController1: NSViewController {
         
         preferences.calendar.textColor = NSColor.darkGray
         preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
-        preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
-        preferences.calendar.borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
+        preferences.calendar.cellColorToday = NSColor.green // #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
+        preferences.calendar.borderColor = NSColor.blue //#colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
         preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         preferences.calendar.beginWeek = .monday
         
@@ -50,17 +46,6 @@ class ViewController1: NSViewController {
         // Showing dots
         calendarView.counts = generateCounts()
         
-//        var attributes = [NSAttributedStringKey: AnyObject]()
-//        attributes[NSAttributedStringKey.foregroundColor] = NSColor.blue
-//
-//        var attributedString = NSAttributedString(string: "Previous month", attributes: attributes)
-//        previous.attributedTitle = attributedString
-//
-//        attributedString = NSAttributedString(string: "Next month", attributes: attributes)
-//        nextMonth.attributedTitle = attributedString
-//
-//        attributedString = NSAttributedString(string: "Today", attributes: attributes)
-//        toDay.attributedTitle = attributedString
     }
     
     func setUpLayoutConstraints(item : NSView, toItem: NSView)

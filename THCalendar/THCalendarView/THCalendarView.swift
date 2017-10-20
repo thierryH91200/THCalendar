@@ -133,7 +133,6 @@ class THCalendarView: NSViewController {
         if let newDate = (date.applyOffSetOfMonth( offset: offet)){
             date = newDate
             selectedDate = newDate
-            
             collectionView.reloadData()
         }
     }
@@ -158,19 +157,8 @@ extension THCalendarView: NSCollectionViewDelegateFlowLayout {
             size = NSMakeSize(width / 7, 30)
         case .date:
             size = NSMakeSize(width / 7, 50 )
-            
-            print(width,"  ", size)
         }
         return size
-    }
-    
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
-    {
-        return 0
-    }
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
-        return 0
     }
 }
 

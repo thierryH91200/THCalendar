@@ -42,18 +42,6 @@ class THDateItem: NSCollectionViewItem {
     var inCurrentMonth: Bool = true {
         didSet {
             dateField.alphaValue = inCurrentMonth ? 1.0 : 0.3
-//            if textLayer == nil
-//            {
-//                return
-//            }
-//            if inCurrentMonth {
-//                textLayer.foregroundColor = preferences.calendar.textColor.withAlphaComponent(1.0).cgColor
-//
-//            }
-//            else
-//            {
-//                textLayer.foregroundColor = preferences.calendar.textColor.withAlphaComponent(0.3).cgColor
-//            }
         }
     }
     
@@ -67,26 +55,11 @@ class THDateItem: NSCollectionViewItem {
         dateField.stringValue = "\(day)"
         dateField.textColor = preferences.calendar.textColor
         dateField.alignment = .center
-        
-       
-        
+
         self.inCurrentMonth = inCurrentMonth
         
         view.wantsLayer = true
         view.layer?.sublayers?.forEach { $0.removeFromSuperlayer() }
-        
-//        view.wantsLayer = true
-//        textLayer = CATextLayer()
-//        let dimension = min(view.bounds.width, view.bounds.height)
-//        print("view.bounds.width =", view.bounds.width)
-//        textLayer.frame = CGRect( x: 0, y: 0, width: dimension / 2, height: dimension / 2)
-//        textLayer.string = "\(day)"
-//        textLayer.fontSize = 18.0
-//        textLayer.foregroundColor = preferences.calendar.textColor.cgColor
-//
-//        textLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
-//        textLayer.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
-//        view.layer?.addSublayer(textLayer)
         
         BackgroundViewLayer()
         CircleLayer()
