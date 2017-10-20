@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13528" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13528"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="THCalendar" customModuleProvider="target">
+            <connections>
+                <outlet property="myView" destination="yza-oD-Emx" id="XCp-Rx-ZBy"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="823" height="689"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="823" height="689"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="yza-oD-Emx">
+                        <rect key="frame" x="0.0" y="150" width="823" height="539"/>
+                    </customView>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfU-q5-osk">
+                        <rect key="frame" x="20" y="100" width="44" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </colorWell>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yza-oD-Emx" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="AZS-0e-5zg"/>
+                    <constraint firstItem="yza-oD-Emx" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="Cf0-qh-wFt"/>
+                    <constraint firstAttribute="trailing" secondItem="yza-oD-Emx" secondAttribute="trailing" id="JuZ-Hq-pKc"/>
+                    <constraint firstAttribute="bottom" secondItem="yza-oD-Emx" secondAttribute="bottom" constant="150" id="b2x-Se-amh"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="310.5" y="371.5"/>
+        </window>
+    </objects>
+</document>

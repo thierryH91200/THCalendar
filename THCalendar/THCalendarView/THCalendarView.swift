@@ -16,7 +16,7 @@ class THCalendarView: NSViewController {
     public struct Preferences {
         
         public struct Calendar {
-            public var textColor = NSColor.black
+            public var textColor = NSColor.black.withAlphaComponent(0.3)
             public var cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
             public var cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
             public var borderColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
@@ -77,6 +77,17 @@ class THCalendarView: NSViewController {
         
         let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
         collectionView.backgroundColors =  [colorBackGround]
+
+    }
+    
+    
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        
+        // When we're invalidating the collection view layout
+        // it will call `collectionView(_:layout:sizeForItemAt:)` method
+        collectionView.collectionViewLayout?.invalidateLayout()
+        collectionView.reloadData()
     }
         
     func selectSelectedDateItem() {
@@ -99,6 +110,34 @@ class THCalendarView: NSViewController {
         }
         return nil
     }
+    
+    
+    @IBAction func previousMonth(_ sender: Any) {
+        goToMonthWithOffet(-1)
+    }
+    
+    @IBAction func toDayMonth(_ sender: Any) {
+    
+        self.date = Date()
+        selectedDate = Date()
+        
+        collectionView.reloadData()
+    }
+    
+    @IBAction func nextMonth(_ sender: Any) {
+        goToMonthWithOffet(1)
+    }
+    
+    func goToMonthWithOffet(_ offet:Int){
+        
+        if let newDate = (date.applyOffSetOfMonth( offset: offet)){
+            date = newDate
+            selectedDate = newDate
+            
+            collectionView.reloadData()
+        }
+    }
+
 }
 
 extension THCalendarView: NSCollectionViewDelegate {
@@ -119,6 +158,8 @@ extension THCalendarView: NSCollectionViewDelegateFlowLayout {
             size = NSMakeSize(width / 7, 30)
         case .date:
             size = NSMakeSize(width / 7, 50 )
+            
+            print(width,"  ", size)
         }
         return size
     }

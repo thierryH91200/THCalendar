@@ -26,7 +26,7 @@
                             <collectionView selectable="YES" allowsEmptySelection="NO" id="k3R-xQ-LiC">
                                 <rect key="frame" x="0.0" y="0.0" width="278" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="GWW-LR-2pb">
+                                <collectionViewFlowLayout key="collectionViewLayout" id="GWW-LR-2pb">
                                     <size key="itemSize" width="50" height="50"/>
                                 </collectionViewFlowLayout>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

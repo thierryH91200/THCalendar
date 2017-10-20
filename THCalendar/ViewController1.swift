@@ -10,9 +10,9 @@ import Cocoa
 
 class ViewController1: NSViewController {
     
-    @IBOutlet weak var toDay: NSButton!
-    @IBOutlet weak var nextMonth: NSButton!
-    @IBOutlet weak var previous: NSButton!
+//    @IBOutlet weak var toDay: NSButton!
+//    @IBOutlet weak var nextMonth: NSButton!
+//    @IBOutlet weak var previous: NSButton!
     
     @IBOutlet weak var containerView: NSView!
     
@@ -41,7 +41,8 @@ class ViewController1: NSViewController {
         addChildViewController(calendarView)
         calendarView.view.frame = containerView.frame
         view.addSubview(calendarView.view)
-        
+        setUpLayoutConstraints(item: calendarView.view, toItem: view)
+
         // Step 3 - Set properties
         // Set selected date
         calendarView.selectedDate = Date()
@@ -49,18 +50,30 @@ class ViewController1: NSViewController {
         // Showing dots
         calendarView.counts = generateCounts()
         
-        var attributes = [NSAttributedStringKey: AnyObject]()
-        attributes[NSAttributedStringKey.foregroundColor] = NSColor.blue
-        
-        var attributedString = NSAttributedString(string: "Previous month", attributes: attributes)
-        previous.attributedTitle = attributedString
-        
-        attributedString = NSAttributedString(string: "Next month", attributes: attributes)
-        nextMonth.attributedTitle = attributedString
-        
-        attributedString = NSAttributedString(string: "Today", attributes: attributes)
-        toDay.attributedTitle = attributedString
+//        var attributes = [NSAttributedStringKey: AnyObject]()
+//        attributes[NSAttributedStringKey.foregroundColor] = NSColor.blue
+//
+//        var attributedString = NSAttributedString(string: "Previous month", attributes: attributes)
+//        previous.attributedTitle = attributedString
+//
+//        attributedString = NSAttributedString(string: "Next month", attributes: attributes)
+//        nextMonth.attributedTitle = attributedString
+//
+//        attributedString = NSAttributedString(string: "Today", attributes: attributes)
+//        toDay.attributedTitle = attributedString
     }
+    
+    func setUpLayoutConstraints(item : NSView, toItem: NSView)
+    {
+        item.translatesAutoresizingMaskIntoConstraints = false
+        let sourceListLayoutConstraints = [
+            NSLayoutConstraint(item: item, attribute: .left, relatedBy: .equal, toItem: toItem, attribute: .left, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: item, attribute: .right, relatedBy: .equal, toItem: toItem, attribute: .right, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: item, attribute: .top, relatedBy: .equal, toItem: toItem, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: item, attribute: .bottom, relatedBy: .equal, toItem: toItem, attribute: .bottom, multiplier: 1, constant: 100)]
+        NSLayoutConstraint.activate(sourceListLayoutConstraints)
+    }
+
     
     func generateCounts() -> [Int] {
         
@@ -72,31 +85,5 @@ class ViewController1: NSViewController {
             counts.append(i % 2)
         }
         return counts
-    }
-    
-    @IBAction func previousMonth(_ sender: Any) {
-        goToMonthWithOffet(-1)
-    }
-    
-    @IBAction func toDayMonth(_ sender: Any) {
-        
-        calendarView.date = Date()
-        calendarView.selectedDate = Date()
-        
-        calendarView.collectionView.reloadData()
-    }
-    
-    @IBAction func nextMonth(_ sender: Any) {
-        goToMonthWithOffet(1)
-    }
-    
-    func goToMonthWithOffet(_ offet:Int){
-        
-        if let newDate = (calendarView.date.applyOffSetOfMonth( offset: offet)){
-            calendarView.date = newDate
-            calendarView.selectedDate = newDate
-
-            calendarView.collectionView.reloadData()
-        }
     }
 }

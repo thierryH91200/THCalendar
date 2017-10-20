@@ -12,9 +12,9 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
-    var viewController1: ViewController1?
     
-    @IBOutlet weak var myView: NSView!
+    var mainWindowController: MainWindowController?
+
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -32,10 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func initializeLibraryAndShowMainWindow() {
         
-        viewController1 = ViewController1()
+        mainWindowController = MainWindowController(windowNibName: NSNib.Name(rawValue: "MainWindowController"))
         
-        myView.subviews.removeAll()
-        myView.addSubview((viewController1?.view)!)
+        mainWindowController?.delegate = self
+        mainWindowController?.showWindow(self)
         
     }
 }
