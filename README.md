@@ -44,5 +44,5 @@ view.addSubview(calendarView.view)
 
 ```
 calendarView.counts = generateCounts()
-calendarView.selectedDate = NSDate()
+calendarView.selectedDate = Date()
 ```
