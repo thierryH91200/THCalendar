@@ -37,7 +37,6 @@ class THCalendarView: NSViewController {
     
     enum weekDisplay : Int {
         
-        
         case sunday = 6
         case monday = 5
         case tuesday = 4
@@ -45,9 +44,7 @@ class THCalendarView: NSViewController {
         case thursday = 2
         case friday = 1
         case saturday = 0
-        
     }
-    
     
     public static var globalPreferences = Preferences()
     
@@ -80,7 +77,6 @@ class THCalendarView: NSViewController {
         
         let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
         collectionView.backgroundColors =  [colorBackGround]
-
     }
         
     func selectSelectedDateItem() {
@@ -128,6 +124,10 @@ extension THCalendarView: NSCollectionViewDelegateFlowLayout {
     }
     
     public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return 0
+    }
+    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
         return 0
     }

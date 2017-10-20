@@ -10,7 +10,6 @@ import Cocoa
 
 class ViewController1: NSViewController {
     
-
     @IBOutlet weak var toDay: NSButton!
     @IBOutlet weak var nextMonth: NSButton!
     @IBOutlet weak var previous: NSButton!
@@ -90,6 +89,7 @@ class ViewController1: NSViewController {
     @IBAction func nextMonth(_ sender: Any) {
         goToMonthWithOffet(1)
     }
+    
     func goToMonthWithOffet(_ offet:Int){
         
         if let newDate = (calendarView.date.applyOffSetOfMonth( offset: offet)){

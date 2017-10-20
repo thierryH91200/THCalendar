@@ -47,9 +47,8 @@ extension THCalendarView: NSCollectionViewDataSource {
                 let begin = 6 - beginWeek
                 let formatter = DateFormatter()
                 var index = indexPath.item + begin
-                if index >= 7 {
-                    index  = index - 7
-                }
+                index  =  index >= 7 ? index - 7 : index
+                
                 let day = formatter.weekdaySymbols[index]
                 item.configure(week: day)
             }

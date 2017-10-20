@@ -1,6 +1,6 @@
 //
 //  DateExtension.swift
-//  YMCalendar
+//  THCalendar
 //
 //  Created by Yuma Matsune on 2017/02/21.
 //  Copyright © 2017年 Yuma Matsune. All rights reserved.

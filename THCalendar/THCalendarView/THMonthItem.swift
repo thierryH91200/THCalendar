@@ -41,12 +41,6 @@ class THMonthItem: NSCollectionViewItem {
         title.append(yearTitle)
         
         monthField.attributedStringValue = title
-        
-//        monthField.stringValue = "\(month) \(year)"
-//        monthField.textColor = THCalendarView.globalPreferences.calendar.textColor
-//        monthField.alignment = .center
-//        monthField.font = NSFont(name: "Helvetica", size: 20.0)
-
     }
     
 }
