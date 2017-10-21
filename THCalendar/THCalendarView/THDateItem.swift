@@ -57,16 +57,8 @@ class THDateItem: NSCollectionViewItem {
 
         self.inCurrentMonth = inCurrentMonth
         
-        var myView = view.subviews
-        var count = myView.count
-        print("count : ", count)
-        
         view.wantsLayer = true
         view.layer?.sublayers?.forEach { $0.removeFromSuperlayer() }
-        
-        myView = view.subviews
-        count = myView.count
-        print("count : ", count)
         
         BackgroundViewLayer()
         CircleLayer()
@@ -115,7 +107,6 @@ class THDateItem: NSCollectionViewItem {
         backgroundViewLayer.cornerRadius = 4.0
         
         backgroundViewLayer.borderColor = preferences.calendar.borderColor.cgColor
-        print(preferences.calendar.borderColor)
         backgroundViewLayer.borderWidth = 0.0
                 
         backgroundViewLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
