@@ -12,7 +12,9 @@ import Cocoa
 class THCalendarView: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
-
+    
+    public static var globalPreferences = Preferences()
+    
     public struct Preferences {
         
         public struct Calendar {
@@ -47,8 +49,6 @@ class THCalendarView: NSViewController {
         case saturday = 0
     }
     
-    public static var globalPreferences = Preferences()
-    
     // Today
     var date = Date()
     // Selected Date
@@ -78,7 +78,6 @@ class THCalendarView: NSViewController {
         
         let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
         collectionView.backgroundColors =  [colorBackGround]
-
     }
     
     
@@ -90,17 +89,17 @@ class THCalendarView: NSViewController {
         collectionView.collectionViewLayout?.invalidateLayout()
         collectionView.reloadData()
     }
-        
+    
     func selectSelectedDateItem() {
-//        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
-//            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
-//        }
+        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
+            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
+        }
     }
     
     func indexPathForDate(selectedDate: Date) -> IndexPath? {
         
         let calendar = Calendar.current
-
+        
         if calendar.month(date) == calendar.month(selectedDate) {
             let start = date.startOfMonth()
             let weekDay = calendar.component(.weekday, from: start)
@@ -117,7 +116,7 @@ class THCalendarView: NSViewController {
     }
     
     @IBAction func toDayMonth(_ sender: Any) {
-    
+        
         self.date = Date()
         selectedDate = Date()
         
@@ -136,7 +135,6 @@ class THCalendarView: NSViewController {
             collectionView.reloadData()
         }
     }
-
 }
 
 extension THCalendarView: NSCollectionViewDelegate {
@@ -172,4 +170,14 @@ extension Date {
         return Calendar.current.date(  byAdding: dateComponents, to: self, wrappingComponents: false)
     }
 }
+
+// just for the debug
+extension NSView {
+    
+    override open var description: String {
+        let id = identifier?._rawValue
+        return "id: \(String(describing: id!))"
+    }
+}
+
 

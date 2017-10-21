@@ -12,9 +12,9 @@ class THDateItem: NSCollectionViewItem {
     
     @IBOutlet weak var dateField: NSTextField!
     
-    var circleLayer: CALayer!
-    var dotLayer: CALayer!
-    var backgroundViewLayer :CALayer!
+    var circleLayer: CALayer?
+    var dotLayer: CALayer?
+    var backgroundViewLayer : CALayer?
     
     let preferences = THCalendarView.globalPreferences
     
@@ -27,15 +27,15 @@ class THDateItem: NSCollectionViewItem {
     override var isSelected: Bool {
         didSet {
             updateStyles()
-            backgroundViewLayer.borderWidth = isSelected ? 2.0 : 1.0
-            backgroundViewLayer.borderColor = isSelected ? preferences.calendar.borderSelectColor.cgColor : preferences.calendar.borderDefaultColor.cgColor
+            backgroundViewLayer?.borderWidth = isSelected ? 2.0 : 1.0
+            backgroundViewLayer?.borderColor = isSelected ? preferences.calendar.borderSelectColor.cgColor : preferences.calendar.borderDefaultColor.cgColor
         }
     }
     
     var isToday : Bool = false {
         
         didSet {
-            backgroundViewLayer.backgroundColor = isToday ? preferences.calendar.cellColorToday.cgColor : preferences.calendar.cellColorDefault.cgColor
+            backgroundViewLayer?.backgroundColor = isToday ? preferences.calendar.cellColorToday.cgColor : preferences.calendar.cellColorDefault.cgColor
         }
     }
     
@@ -72,29 +72,29 @@ class THDateItem: NSCollectionViewItem {
         
         circleLayer = CALayer()
         let dimension = min(view.bounds.width, view.bounds.height)
-        circleLayer.frame = CGRect( x: 0, y: 0, width: dimension / 2, height: dimension / 2)
-        circleLayer.cornerRadius = dimension / 4
-        circleLayer.backgroundColor = preferences.date.circleBackgroundColor.cgColor
-        circleLayer.masksToBounds = false
-        circleLayer.isHidden = true
+        circleLayer?.frame = CGRect( x: 0, y: 0, width: dimension / 2, height: dimension / 2)
+        circleLayer?.cornerRadius = dimension / 4
+        circleLayer?.backgroundColor = preferences.date.circleBackgroundColor.cgColor
+        circleLayer?.masksToBounds = false
+        circleLayer?.isHidden = true
         
-        circleLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
-        circleLayer.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
-        view.layer?.addSublayer(circleLayer)
+        circleLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.5)
+        circleLayer?.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
+        view.layer?.addSublayer(circleLayer!)
     }
     
     func DotLayer()
     {
         dotLayer = CALayer()
-        dotLayer.frame = CGRect(x: 0 , y: 0, width: 4, height: 4)
-        dotLayer.cornerRadius = 2
-        dotLayer.backgroundColor = preferences.date.dotColor.cgColor
-        dotLayer.isHidden = true
+        dotLayer?.frame = CGRect(x: 0 , y: 0, width: 4, height: 4)
+        dotLayer?.cornerRadius = 2
+        dotLayer?.backgroundColor = preferences.date.dotColor.cgColor
+        dotLayer?.isHidden = true
         
-        dotLayer.anchorPoint = CGPoint(x : 0.5, y : 0.0)
-        dotLayer.position =  CGPoint(x: view.bounds.width / 2 , y: 4.0)
+        dotLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.0)
+        dotLayer?.position =  CGPoint(x: view.bounds.width / 2 , y: 4.0)
         
-        view.layer?.addSublayer(dotLayer)
+        view.layer?.addSublayer(dotLayer!)
     }
     
     func BackgroundViewLayer() {
@@ -104,19 +104,19 @@ class THDateItem: NSCollectionViewItem {
         var frame = CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         frame = frame.insetBy(dx: 3.0, dy: 3.0)
         
-        backgroundViewLayer.frame = frame
-        backgroundViewLayer.cornerRadius = 4.0
+        backgroundViewLayer?.frame = frame
+        backgroundViewLayer?.cornerRadius = 4.0
         
-        backgroundViewLayer.borderColor = preferences.calendar.borderDefaultColor.cgColor
-        backgroundViewLayer.borderWidth = 1.0
+        backgroundViewLayer?.borderColor = preferences.calendar.borderDefaultColor.cgColor
+        backgroundViewLayer?.borderWidth = 1.0
                 
-        backgroundViewLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
-        backgroundViewLayer.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
-        view.layer?.addSublayer(backgroundViewLayer)
+        backgroundViewLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.5)
+        backgroundViewLayer?.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
+        view.layer?.addSublayer(backgroundViewLayer!)
     }
     
     private func updateStyles() {
         
-        circleLayer.isHidden = !isSelected
+        circleLayer?.isHidden = !isSelected
     }
 }
