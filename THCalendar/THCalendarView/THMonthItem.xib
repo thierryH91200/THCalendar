@@ -37,7 +37,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="geU-ih-12u">
-                    <rect key="frame" x="204" y="6" width="77" height="32"/>
+                    <rect key="frame" x="204" y="7" width="77" height="32"/>
                     <buttonCell key="cell" type="push" title="Today" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Pb-yu-jn6">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -61,7 +61,7 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="geU-ih-12u" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="16" id="9h2-pi-Jsr"/>
+                <constraint firstItem="geU-ih-12u" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="15" id="9h2-pi-Jsr"/>
                 <constraint firstItem="mhJ-0A-Rqp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="16" id="E9d-3D-kcE"/>
                 <constraint firstAttribute="trailing" secondItem="JzF-Ny-Bq0" secondAttribute="trailing" id="FjT-3U-bTp"/>
                 <constraint firstItem="JzF-Ny-Bq0" firstAttribute="leading" secondItem="geU-ih-12u" secondAttribute="trailing" id="UTd-x1-x7r"/>

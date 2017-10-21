@@ -111,7 +111,6 @@ class THCalendarView: NSViewController {
         return nil
     }
     
-    
     @IBAction func previousMonth(_ sender: Any) {
         goToMonthWithOffet(-1)
     }

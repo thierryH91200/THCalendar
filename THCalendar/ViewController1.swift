@@ -13,18 +13,20 @@ class ViewController1: NSViewController {
     @IBOutlet weak var containerView: NSView!
     
     let calendarView = THCalendarView()
+    var preferences = THCalendarView.globalPreferences
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
         // Step 1 - Override Style
-        var preferences = THCalendarView.globalPreferences
+//        var preferences = THCalendarView.globalPreferences
         
         preferences.calendar.textColor = NSColor.darkGray
         preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
-        preferences.calendar.cellColorToday = NSColor.green // #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
-        preferences.calendar.borderColor = NSColor.blue //#colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
+        preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
+        preferences.calendar.borderColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         preferences.calendar.beginWeek = .monday
         
@@ -45,7 +47,13 @@ class ViewController1: NSViewController {
 
         // Showing dots
         calendarView.counts = generateCounts()
-        
+    }
+    
+    func setBorderColor(color :NSColor)
+    {
+        preferences.calendar.borderColor =  color
+        THCalendarView.globalPreferences = preferences
+        calendarView.collectionView.reloadData()
     }
     
     func setUpLayoutConstraints(item : NSView, toItem: NSView)

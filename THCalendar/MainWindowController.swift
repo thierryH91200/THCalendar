@@ -12,6 +12,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     
     @IBOutlet weak var myView: NSView!
 
+    @IBOutlet weak var colorText: NSColorWell!
+    @IBOutlet weak var backgroundColors: NSColorWell!
+    
     var delegate: AppDelegate?
     var viewController1      = ViewController1()
     
@@ -26,6 +29,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         addSubview(subView: vc, toView: myView)
         
         setUpLayoutConstraints(item: vc, toItem: myView)
+        
+        colorText.color = preferences.calendar.textColor
+        backgroundColors.color = preferences.calendar.backgroundColors
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
@@ -62,38 +68,15 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         viewController1.calendarView.collectionView.reloadData()
     }
     
-    @IBAction func cellColorDefault(_ sender : NSColorWell)
-    {
-//        var preferences = viewController1.calendarView.pre
-        let color = sender.color
-        preferences.calendar.cellColorDefault = color
-        THCalendarView.globalPreferences = preferences
-        viewController1.calendarView.collectionView.reloadData()
-    }
-    
-    @IBAction func cellColorToday(_ sender : NSColorWell)
+ 
+    @IBAction func changeBackgroundColors(_ sender : NSColorWell)
     {
         let color = sender.color
-        print(color)
-        preferences.calendar.cellColorToday = color
-        THCalendarView.globalPreferences = preferences
-        print(THCalendarView.globalPreferences )
-        viewController1.calendarView.collectionView.reloadData()
-    }
-
-    @IBAction func backgroundColors(_ sender : NSColorWell)
-    {
-        let color = sender.color
-        print(color)
-
         preferences.calendar.backgroundColors = color
         THCalendarView.globalPreferences = preferences
         viewController1.calendarView.collectionView.backgroundColors =  [color]
         viewController1.calendarView.collectionView.reloadData()
     }
-
-
-
-
     
+ 
 }
