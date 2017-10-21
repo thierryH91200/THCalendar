@@ -24,7 +24,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JzF-Ny-Bq0">
-                    <rect key="frame" x="275" y="14" width="20" height="21"/>
+                    <rect key="frame" x="275" y="18" width="20" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Wke-OD-ciE"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="geU-ih-12u">
-                    <rect key="frame" x="204" y="7" width="77" height="32"/>
+                    <rect key="frame" x="204" y="11" width="77" height="32"/>
                     <buttonCell key="cell" type="push" title="Today" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Pb-yu-jn6">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -47,7 +47,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mhJ-0A-Rqp">
-                    <rect key="frame" x="190" y="14" width="20" height="21"/>
+                    <rect key="frame" x="190" y="18" width="20" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="3Xf-bM-Bkv"/>
                     </constraints>
@@ -61,13 +61,13 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="geU-ih-12u" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="15" id="9h2-pi-Jsr"/>
-                <constraint firstItem="mhJ-0A-Rqp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="16" id="E9d-3D-kcE"/>
+                <constraint firstItem="geU-ih-12u" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="11" id="9h2-pi-Jsr"/>
+                <constraint firstItem="mhJ-0A-Rqp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="12" id="E9d-3D-kcE"/>
                 <constraint firstAttribute="trailing" secondItem="JzF-Ny-Bq0" secondAttribute="trailing" id="FjT-3U-bTp"/>
                 <constraint firstItem="JzF-Ny-Bq0" firstAttribute="leading" secondItem="geU-ih-12u" secondAttribute="trailing" id="UTd-x1-x7r"/>
                 <constraint firstItem="geU-ih-12u" firstAttribute="leading" secondItem="mhJ-0A-Rqp" secondAttribute="trailing" id="aE7-r5-7fg"/>
                 <constraint firstItem="x8y-5g-rl7" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="b1a-Xq-u3m"/>
-                <constraint firstItem="JzF-Ny-Bq0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="16" id="hGh-fq-apm"/>
+                <constraint firstItem="JzF-Ny-Bq0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="12" id="hGh-fq-apm"/>
                 <constraint firstItem="x8y-5g-rl7" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="n5i-za-uLd"/>
             </constraints>
             <point key="canvasLocation" x="413" y="169"/>

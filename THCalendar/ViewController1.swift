@@ -24,14 +24,15 @@ class ViewController1: NSViewController {
 //        var preferences = THCalendarView.globalPreferences
         
         preferences.calendar.textColor = NSColor.darkGray
-        preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.1)
+        preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.0)
         preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
-        preferences.calendar.borderColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        preferences.calendar.borderSelectColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        preferences.calendar.borderDefaultColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         preferences.calendar.beginWeek = .monday
         
-        preferences.date.circleBackgroundColor = NSColor.yellow
-        preferences.date.dotColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+        preferences.date.circleBackgroundColor = NSColor.red
+        preferences.date.dotColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
 
         THCalendarView.globalPreferences = preferences
         
@@ -51,7 +52,7 @@ class ViewController1: NSViewController {
     
     func setBorderColor(color :NSColor)
     {
-        preferences.calendar.borderColor =  color
+        preferences.calendar.borderSelectColor =  color
         THCalendarView.globalPreferences = preferences
         calendarView.collectionView.reloadData()
     }

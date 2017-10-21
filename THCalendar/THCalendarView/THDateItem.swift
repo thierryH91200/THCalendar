@@ -27,7 +27,8 @@ class THDateItem: NSCollectionViewItem {
     override var isSelected: Bool {
         didSet {
             updateStyles()
-            backgroundViewLayer.borderWidth = isSelected ? 2.0 : 0.0
+            backgroundViewLayer.borderWidth = isSelected ? 2.0 : 1.0
+            backgroundViewLayer.borderColor = isSelected ? preferences.calendar.borderSelectColor.cgColor : preferences.calendar.borderDefaultColor.cgColor
         }
     }
     
@@ -106,8 +107,8 @@ class THDateItem: NSCollectionViewItem {
         backgroundViewLayer.frame = frame
         backgroundViewLayer.cornerRadius = 4.0
         
-        backgroundViewLayer.borderColor = preferences.calendar.borderColor.cgColor
-        backgroundViewLayer.borderWidth = 0.0
+        backgroundViewLayer.borderColor = preferences.calendar.borderDefaultColor.cgColor
+        backgroundViewLayer.borderWidth = 1.0
                 
         backgroundViewLayer.anchorPoint = CGPoint(x : 0.5, y : 0.5)
         backgroundViewLayer.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
