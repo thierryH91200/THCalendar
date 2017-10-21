@@ -23,7 +23,7 @@ class THCalendarView: NSViewController {
             public var cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
             public var borderSelectColor = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.8)
             public var borderDefaultColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            public var backgroundColors = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            public var backgroundColors = #colorLiteral(red: 0.4755474925, green: 0.8375863433, blue: 0.97578758, alpha: 1)
             public var beginWeek : weekDisplay = .monday
         }
         
@@ -79,7 +79,6 @@ class THCalendarView: NSViewController {
         let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
         collectionView.backgroundColors =  [colorBackGround]
     }
-    
     
     override func viewWillLayout() {
         super.viewWillLayout()

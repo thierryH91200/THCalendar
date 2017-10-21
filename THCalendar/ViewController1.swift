@@ -22,11 +22,11 @@ class ViewController1: NSViewController {
         // Step 1 - Override Style
         
         preferences.calendar.textColor = NSColor.darkGray
-        preferences.calendar.cellColorDefault = NSColor(white: 0.0, alpha: 0.0)
+        preferences.calendar.cellColorDefault = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         preferences.calendar.cellColorToday = #colorLiteral(red: 0.996078431372549, green: 0.286274509803922, blue: 0.250980392156863, alpha: 0.3)
         preferences.calendar.borderSelectColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         preferences.calendar.borderDefaultColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        preferences.calendar.backgroundColors = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        preferences.calendar.backgroundColors = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         preferences.calendar.beginWeek = .monday
         
         preferences.date.circleBackgroundColor = NSColor.red

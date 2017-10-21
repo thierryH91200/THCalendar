@@ -92,7 +92,7 @@ class THDateItem: NSCollectionViewItem {
         dotLayer?.isHidden = true
         
         dotLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.0)
-        dotLayer?.position =  CGPoint(x: view.bounds.width / 2 , y: 4.0)
+        dotLayer?.position =  CGPoint(x: view.bounds.width / 2 , y: 6.0)
         
         view.layer?.addSublayer(dotLayer!)
     }
@@ -106,6 +106,7 @@ class THDateItem: NSCollectionViewItem {
         
         backgroundViewLayer?.frame = frame
         backgroundViewLayer?.cornerRadius = 4.0
+        backgroundViewLayer?.backgroundColor = preferences.calendar.cellColorDefault.cgColor
         
         backgroundViewLayer?.borderColor = preferences.calendar.borderDefaultColor.cgColor
         backgroundViewLayer?.borderWidth = 1.0
