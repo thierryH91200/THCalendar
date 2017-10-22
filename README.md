@@ -3,7 +3,7 @@
 
 CalendarView framework written in Swift for OS X
 
-![Alt text](https://github.com/thierryH91200/THCalendar/blob/master/Capture%20d’écran%202017-10-19%20à%2021.47.01.png)
+![Alt text](https://github.com/thierryH91200/THCalendar/blob/master/THCalendar.jpg)
 
 
 # Usage
