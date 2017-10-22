@@ -44,7 +44,7 @@ class ViewController: NSViewController {
         calendarView.selectedDate = Date()
 
         // Showing dots
-        calendarView.counts = generateCounts()
+        calendarView.events = generateEvents()
     }
     
     func setUpLayoutConstraints(item : NSView, toItem: NSView)
@@ -58,16 +58,15 @@ class ViewController: NSViewController {
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
 
-    
-    func generateCounts() -> [Int] {
+    func generateEvents() -> [Int] {
         
-        var counts = [Int]()
-        let calendar = Calendar.current
-
-        let monthDays = calendar.numberOfDaysInMonthForDate(Date())
-        for i in 0..<monthDays {
-            counts.append(i % 2)
+        let monthDays = Calendar.current.numberOfDaysInMonthForDate(Date())
+        
+        let events = (0..<monthDays).map { (i) -> Int in
+            let mult : UInt32 = 3
+            let val = Double(arc4random_uniform(mult))
+            return Int(val)
         }
-        return counts
+        return events
     }
 }

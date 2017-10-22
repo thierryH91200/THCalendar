@@ -54,7 +54,7 @@ extension THCalendarView: NSCollectionViewDataSource {
             }
         case .date:
             
-            let (day, inMonth) = dayInMonthForItem(item: indexPath.item)
+            let (day, month, year, inMonth) = dayInMonthForItem(item: indexPath.item)
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THDateItem"), for: indexPath)
             
             if let item = item as? THDateItem {
@@ -65,29 +65,41 @@ extension THCalendarView: NSCollectionViewDataSource {
                 }
                 item.configure(day: day, inCurrentMonth: inMonth)
                 
-                if let counts = counts, inMonth {
-                    item.count = counts[day - 1]
+                if let events = events, inMonth {
+                    item.event = events[day - 1]
                 } else {
-                    item.count = 0
+                    item.event = 0
                 }
+                
                 let index = indexPathForDate(selectedDate: selectedDate)
-                let month = THCalendar.Month[calendar.month(date) - 1]
+                let strMonth = THCalendar.Month[calendar.month(date) - 1]
                 let monthSelect = THCalendar.Month[calendar.month(Date()) - 1]
-                if indexPath.item == (index?.item)! + beginWeek && month ==  monthSelect {
+                if indexPath.item == (index?.item)! + beginWeek && strMonth ==  monthSelect {
                     item.isToday = true
                 } else
                 {
                     item.isToday = false
                 }
+                
+                var dateComponents = DateComponents()
+                dateComponents.year = year
+                dateComponents.month = month
+                dateComponents.day = day
+                let userCalendar = Calendar.current 
+                let dateItem = userCalendar.date(from: dateComponents)
+                item.dateItem = dateItem!
+
             }
         }
         return item
     }
     
     // MARK: - Private
-    private func dayInMonthForItem(item: Int) -> (Int, Bool) {
+    private func dayInMonthForItem(item: Int) -> (Int, Int, Int, Bool) {
         
         var day: Int = 0
+        var month : Int = 0
+        var year : Int = 0
         var inMonth = false
         
         let beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue
@@ -97,15 +109,19 @@ extension THCalendarView: NSCollectionViewDataSource {
         var weekDay = calendar.component(.weekday, from: start) + beginWeek
         
         let numberOfDaysInMonthCurrent = calendar.numberOfDaysInMonthForDate(date)
+        month = calendar.month(date)
+        year = calendar.year(date)
 
         weekDay = weekDay >= 7 ? weekDay - 7 : weekDay
 
         // Previous month
         if item < weekDay
         {
-            let day2 = calendar.prevStartOfMonthForDate(date)
-            let numberOfDaysInMonthPrevious = calendar.numberOfDaysInMonthForDate(day2)
-            
+            let datePrevious = calendar.prevStartOfMonthForDate(date)
+            let numberOfDaysInMonthPrevious = calendar.numberOfDaysInMonthForDate(datePrevious)
+            month = calendar.month(datePrevious)
+            year = calendar.year(datePrevious)
+
             let day3 = dayForItem(item: item, weekDay: weekDay)
 
             day = day3 + numberOfDaysInMonthPrevious
@@ -121,10 +137,15 @@ extension THCalendarView: NSCollectionViewDataSource {
             else
             {
                 // Next month ??
-                day = dayForItem(item: item, weekDay: weekDay) - numberOfDaysInMonthCurrent
+                let dateNext = calendar.nextStartOfMonthForDate(date)
+                month = calendar.month(dateNext)
+                year = calendar.year(dateNext)
+                
+                let day3 = dayForItem(item: item, weekDay: weekDay)
+                day = day3 - numberOfDaysInMonthCurrent
             }
         }
-        return (day, inMonth)
+        return (day, month, year, inMonth)
     }
     
     private func dayForItem(item: Int, weekDay: Int) -> Int {

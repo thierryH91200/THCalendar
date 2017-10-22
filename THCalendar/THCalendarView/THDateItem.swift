@@ -18,9 +18,9 @@ class THDateItem: NSCollectionViewItem {
     
     let preferences = THCalendarView.globalPreferences
     
-    var count: Int = 0 {
+    var event: Int = 0 {
         didSet {
-            dotLayer?.isHidden = count <= 0 ? true : false
+            dotLayer?.isHidden = event > 0 ? false : true
         }
     }
     
@@ -28,14 +28,34 @@ class THDateItem: NSCollectionViewItem {
         didSet {
             updateStyles()
             backgroundViewLayer?.borderWidth = isSelected ? 2.0 : 1.0
-            backgroundViewLayer?.borderColor = isSelected ? THCalendarView.globalPreferences.calendar.borderSelectColor.cgColor : THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
+            
+            let borderSelectColor = THCalendarView.globalPreferences.calendar.borderSelectColor.cgColor
+            let borderDefaultColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
+            backgroundViewLayer?.borderColor = isSelected ? borderSelectColor: borderDefaultColor
+            
+            if isSelected == true {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .medium
+                dateFormatter.timeStyle = .none
+                let strDate = dateFormatter.string(from: dateItem)
+                
+                print("Date : \(strDate), Event : \(event)")
+            }
+        }
+    }
+    
+    var dateItem : Date  = Date() {
+        didSet {
+//            print(dateItem)
         }
     }
     
     var isToday : Bool = false {
         
         didSet {
-            backgroundViewLayer?.backgroundColor = isToday ? THCalendarView.globalPreferences.calendar.cellColorToday.cgColor : THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
+            let cellColorToday = THCalendarView.globalPreferences.calendar.cellColorToday.cgColor
+            let cellColorDefault = THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
+            backgroundViewLayer?.backgroundColor = isToday ? cellColorToday : cellColorDefault
         }
     }
     

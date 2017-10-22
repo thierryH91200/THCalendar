@@ -58,7 +58,7 @@ class THCalendarView: NSViewController {
         }
     }
     
-    public var counts: [Int]?
+    public var events: [Int]?
     
     enum Section: Int {
         case month = 0, week, date
@@ -90,9 +90,9 @@ class THCalendarView: NSViewController {
     }
     
     func selectSelectedDateItem() {
-        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
-            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
-        }
+//        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
+//            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
+//        }
     }
     
     func indexPathForDate(selectedDate: Date) -> IndexPath? {
