@@ -28,14 +28,14 @@ class THDateItem: NSCollectionViewItem {
         didSet {
             updateStyles()
             backgroundViewLayer?.borderWidth = isSelected ? 2.0 : 1.0
-            backgroundViewLayer?.borderColor = isSelected ? preferences.calendar.borderSelectColor.cgColor : preferences.calendar.borderDefaultColor.cgColor
+            backgroundViewLayer?.borderColor = isSelected ? THCalendarView.globalPreferences.calendar.borderSelectColor.cgColor : THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
         }
     }
     
     var isToday : Bool = false {
         
         didSet {
-            backgroundViewLayer?.backgroundColor = isToday ? preferences.calendar.cellColorToday.cgColor : preferences.calendar.cellColorDefault.cgColor
+            backgroundViewLayer?.backgroundColor = isToday ? THCalendarView.globalPreferences.calendar.cellColorToday.cgColor : THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
         }
     }
     
@@ -106,9 +106,9 @@ class THDateItem: NSCollectionViewItem {
         
         backgroundViewLayer?.frame = frame
         backgroundViewLayer?.cornerRadius = 4.0
-        backgroundViewLayer?.backgroundColor = preferences.calendar.cellColorDefault.cgColor
+        backgroundViewLayer?.backgroundColor = THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
         
-        backgroundViewLayer?.borderColor = preferences.calendar.borderDefaultColor.cgColor
+        backgroundViewLayer?.borderColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
         backgroundViewLayer?.borderWidth = 1.0
                 
         backgroundViewLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.5)

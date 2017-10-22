@@ -91,7 +91,6 @@ extension THCalendarView: NSCollectionViewDataSource {
         var inMonth = false
         
         let beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue
-
         let calendar = Calendar.current
 
         let start = date.startOfMonth()

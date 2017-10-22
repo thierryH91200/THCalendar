@@ -12,13 +12,17 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     
     @IBOutlet weak var myView: NSView!
 
-    @IBOutlet weak var colorText: NSColorWell!
     @IBOutlet weak var backgroundColors: NSColorWell!
+    @IBOutlet weak var borderDefaultColor: NSColorWell!
+    @IBOutlet weak var borderSelectColor: NSColorWell!
+    @IBOutlet weak var cellColor: NSColorWell!
+    @IBOutlet weak var cellColorToday: NSColorWell!
+    @IBOutlet weak var colorText: NSColorWell!
     
     var delegate: AppDelegate?
     var viewController1      = ViewController1()
     
-    var preferences = THCalendarView.globalPreferences
+//    var preferences = THCalendarView.globalPreferences
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -30,8 +34,12 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         
         setUpLayoutConstraints(item: vc, toItem: myView)
         
-        colorText.color = preferences.calendar.textColor
-        backgroundColors.color = preferences.calendar.backgroundColors
+        backgroundColors.color = THCalendarView.globalPreferences.calendar.backgroundColors
+        borderDefaultColor.color = THCalendarView.globalPreferences.calendar.borderDefaultColor
+        borderSelectColor.color = THCalendarView.globalPreferences.calendar.borderSelectColor
+        cellColor.color = THCalendarView.globalPreferences.calendar.cellColorDefault
+        cellColorToday.color = THCalendarView.globalPreferences.calendar.cellColorToday
+        colorText.color = THCalendarView.globalPreferences.calendar.textColor
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
@@ -63,8 +71,8 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     @IBAction func changeColorText(_ sender : NSColorWell)
     {
         let color = sender.color
-        preferences.calendar.textColor = color
-        THCalendarView.globalPreferences = preferences
+        THCalendarView.globalPreferences.calendar.textColor = color
+//        THCalendarView.globalPreferences = preferences
         viewController1.calendarView.collectionView.reloadData()
     }
     
@@ -72,11 +80,44 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     @IBAction func changeBackgroundColors(_ sender : NSColorWell)
     {
         let color = sender.color
-        preferences.calendar.backgroundColors = color
-        THCalendarView.globalPreferences = preferences
+        THCalendarView.globalPreferences.calendar.backgroundColors = color
+//        THCalendarView.globalPreferences = preferences
         viewController1.calendarView.collectionView.backgroundColors =  [color]
         viewController1.calendarView.collectionView.reloadData()
     }
     
+    @IBAction func changeCellColor(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        THCalendarView.globalPreferences.calendar.cellColorDefault = color
+//        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+
+    @IBAction func changeCellColorToday(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        THCalendarView.globalPreferences.calendar.cellColorToday = color
+//        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+    
+    @IBAction func changeBorderDefaultColor(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        THCalendarView.globalPreferences.calendar.borderDefaultColor = color
+//        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+
+    @IBAction func changeBorderSelectColor(_ sender : NSColorWell)
+    {
+        let color = sender.color
+        THCalendarView.globalPreferences.calendar.borderSelectColor = color
+//        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+
+
  
 }
