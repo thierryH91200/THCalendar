@@ -15,8 +15,8 @@
 		03725C901F978C350068EA12 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725C8E1F978C350068EA12 /* MainMenu.xib */; };
 		03725C9C1F978C350068EA12 /* THCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725C9B1F978C350068EA12 /* THCalendarTests.swift */; };
 		03725CA71F978C350068EA12 /* THCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CA61F978C350068EA12 /* THCalendarUITests.swift */; };
-		03725CB61F978C8F0068EA12 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CB41F978C8F0068EA12 /* ViewController1.swift */; };
-		03725CB71F978C8F0068EA12 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB51F978C8F0068EA12 /* ViewController1.xib */; };
+		03725CB61F978C8F0068EA12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CB41F978C8F0068EA12 /* ViewController.swift */; };
+		03725CB71F978C8F0068EA12 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB51F978C8F0068EA12 /* ViewController.xib */; };
 		03725CC21F978CA50068EA12 /* THWeekItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB81F978CA40068EA12 /* THWeekItem.xib */; };
 		03725CC31F978CA50068EA12 /* THCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03725CB91F978CA40068EA12 /* THCalendarView.xib */; };
 		03725CC41F978CA50068EA12 /* THMonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03725CBA1F978CA40068EA12 /* THMonthItem.swift */; };
@@ -62,8 +62,8 @@
 		03725CA21F978C350068EA12 /* THCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03725CA61F978C350068EA12 /* THCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THCalendarUITests.swift; sourceTree = "<group>"; };
 		03725CA81F978C350068EA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03725CB41F978C8F0068EA12 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
-		03725CB51F978C8F0068EA12 /* ViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
+		03725CB41F978C8F0068EA12 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03725CB51F978C8F0068EA12 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		03725CB81F978CA40068EA12 /* THWeekItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THWeekItem.xib; sourceTree = "<group>"; };
 		03725CB91F978CA40068EA12 /* THCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THCalendarView.xib; sourceTree = "<group>"; };
 		03725CBA1F978CA40068EA12 /* THMonthItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THMonthItem.swift; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 				03725C8A1F978C350068EA12 /* AppDelegate.swift */,
 				03725C8C1F978C350068EA12 /* Assets.xcassets */,
 				03725C8E1F978C350068EA12 /* MainMenu.xib */,
-				03725CB41F978C8F0068EA12 /* ViewController1.swift */,
-				03725CB51F978C8F0068EA12 /* ViewController1.xib */,
+				03725CB41F978C8F0068EA12 /* ViewController.swift */,
+				03725CB51F978C8F0068EA12 /* ViewController.xib */,
 				03725C911F978C350068EA12 /* Info.plist */,
 				03725C921F978C350068EA12 /* THCalendar.entitlements */,
 				030B768C1F9A2FA8009F3AAD /* MainWindowController.swift */,
@@ -281,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03725CB71F978C8F0068EA12 /* ViewController1.xib in Resources */,
+				03725CB71F978C8F0068EA12 /* ViewController.xib in Resources */,
 				03725CC31F978CA50068EA12 /* THCalendarView.xib in Resources */,
 				030B768F1F9A2FA8009F3AAD /* MainWindowController.xib in Resources */,
 				03725C8D1F978C350068EA12 /* Assets.xcassets in Resources */,
@@ -314,7 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03725CCA1F978CA50068EA12 /* THCalendar.swift in Sources */,
-				03725CB61F978C8F0068EA12 /* ViewController1.swift in Sources */,
+				03725CB61F978C8F0068EA12 /* ViewController.swift in Sources */,
 				030531F61F987C6A00A28EC1 /* CalendarExtension.swift in Sources */,
 				03725CC41F978CA50068EA12 /* THMonthItem.swift in Sources */,
 				030B768E1F9A2FA8009F3AAD /* MainWindowController.swift in Sources */,

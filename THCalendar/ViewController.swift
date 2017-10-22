@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController1: NSViewController {
+class ViewController: NSViewController {
     
     @IBOutlet weak var containerView: NSView!
     
@@ -30,8 +30,6 @@ class ViewController1: NSViewController {
         
         THCalendarView.globalPreferences.date.circleBackgroundColor = NSColor.red
         THCalendarView.globalPreferences.date.dotColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-
-//        THCalendarView.globalPreferences = preferences
         
         // Step 2 - Add calendar to view hierarchy
         addChildViewController(calendarView)
