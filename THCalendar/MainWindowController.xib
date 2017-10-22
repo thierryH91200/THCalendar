@@ -14,6 +14,7 @@
                 <outlet property="cellColorToday" destination="PGc-xd-Rwe" id="siN-0C-dhH"/>
                 <outlet property="colorText" destination="jfU-q5-osk" id="odZ-bB-Jg1"/>
                 <outlet property="myView" destination="yza-oD-Emx" id="XCp-Rx-ZBy"/>
+                <outlet property="weekPop" destination="bTU-WU-RX9" id="RPk-0z-fVG"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -116,6 +117,36 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-WU-RX9">
+                        <rect key="frame" x="549" y="92" width="121" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Monday" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WJO-Ve-EH4" id="HEv-Ag-qwx">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="aBl-qI-pdn">
+                                <items>
+                                    <menuItem title="Monday" state="on" id="WJO-Ve-EH4"/>
+                                    <menuItem title="Tuesday" id="Mq6-0A-QZh"/>
+                                    <menuItem title="Wednesday" id="VGW-Kg-0W1"/>
+                                    <menuItem title="Thursday" id="K21-NP-TVe">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Friday" id="7AL-IJ-0fW">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Saturday" id="cU5-xx-G4t">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Sunday" id="EIL-ne-QOw">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="changeBeginWeek:" target="-2" id="6Ye-SB-UqX"/>
+                        </connections>
+                    </popUpButton>
                     <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhm-UK-4EV">
                         <rect key="frame" x="20" y="63" width="44" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

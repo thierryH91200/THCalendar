@@ -13,7 +13,6 @@ class ViewController1: NSViewController {
     @IBOutlet weak var containerView: NSView!
     
     let calendarView = THCalendarView()
-    var preferences = THCalendarView.globalPreferences
 
     override func viewDidLoad() {
         super.viewDidLoad()

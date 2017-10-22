@@ -19,10 +19,14 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     @IBOutlet weak var cellColorToday: NSColorWell!
     @IBOutlet weak var colorText: NSColorWell!
     
+    @IBOutlet weak var weekPop: NSPopUpButton!
+    
     var delegate: AppDelegate?
     var viewController1      = ViewController1()
     
 //    var preferences = THCalendarView.globalPreferences
+    
+    let week = ["Monday", "Tuesday"]
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -115,6 +119,14 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         let color = sender.color
         THCalendarView.globalPreferences.calendar.borderSelectColor = color
 //        THCalendarView.globalPreferences = preferences
+        viewController1.calendarView.collectionView.reloadData()
+    }
+    
+    @IBAction func changeBeginWeek(_ sender : Any)
+    {
+        let menuItem =  weekPop.indexOfSelectedItem == 6 ? weekPop.indexOfSelectedItem : 5 - weekPop.indexOfSelectedItem
+         THCalendarView.globalPreferences.calendar.beginWeek = THCalendarView.weekDisplay(rawValue: menuItem)!
+        //        THCalendarView.globalPreferences = preferences
         viewController1.calendarView.collectionView.reloadData()
     }
 
