@@ -24,9 +24,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     
     var delegate: AppDelegate?
     var viewController      = ViewController()
-    
-    let week = ["Monday", "Tuesday"]
-    
+        
     override func windowDidLoad() {
         super.windowDidLoad()
         
