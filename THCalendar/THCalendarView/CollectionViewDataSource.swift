@@ -85,10 +85,10 @@ extension THCalendarView: NSCollectionViewDataSource {
                 dateComponents.year = year
                 dateComponents.month = month
                 dateComponents.day = day
-                let userCalendar = Calendar.current 
-                let dateItem = userCalendar.date(from: dateComponents)
+                let dateItem = Calendar.current.date(from: dateComponents)
                 item.dateItem = dateItem!
-
+                
+                item.isHidden = THCalendarView.globalPreferences.calendar.isHidden
             }
         }
         return item

@@ -25,6 +25,7 @@ class THCalendarView: NSViewController {
             public var borderDefaultColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             public var backgroundColors = #colorLiteral(red: 0.4755474925, green: 0.8375863433, blue: 0.97578758, alpha: 1)
             public var beginWeek : weekDisplay = .monday
+            public var isHidden = false
         }
     
         public struct Date {
@@ -137,7 +138,7 @@ class THCalendarView: NSViewController {
 }
 
 extension THCalendarView: NSCollectionViewDelegate {
-    
+ 
 }
 
 extension THCalendarView: NSCollectionViewDelegateFlowLayout {

@@ -30,148 +30,149 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView identifier="mainSubView" translatesAutoresizingMaskIntoConstraints="NO" id="yza-oD-Emx">
-                        <rect key="frame" x="0.0" y="150" width="823" height="519"/>
+                        <rect key="frame" x="0.0" y="96" width="823" height="519"/>
                     </customView>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfU-q5-osk">
-                        <rect key="frame" x="20" y="100" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeColorText:" target="-2" id="G8p-16-Q1q"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Hl-gy-CwY">
-                        <rect key="frame" x="70" y="100" width="91" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="colorText" id="Z3x-Yl-nUq">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cM4-38-dZ9">
-                        <rect key="frame" x="20" y="29" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeBorderSelectColor:" target="-2" id="hzm-gt-YIa"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQM-e0-Vrh">
-                        <rect key="frame" x="70" y="29" width="138" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="border Select Color" id="UPG-Ec-hlr">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-AL-YMj">
-                        <rect key="frame" x="238" y="94" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeBackgroundColors:" target="-2" id="qBP-Sr-0e9"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sef-OD-Cu7">
-                        <rect key="frame" x="300" y="97" width="125" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="backgroundColors" id="jX5-Tj-wl8">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccW-xj-O9r">
-                        <rect key="frame" x="238" y="63" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeCellColor:" target="-2" id="Obc-GM-fY5"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bms-4n-Emp">
-                        <rect key="frame" x="300" y="66" width="125" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cell Color Default" id="zEY-mB-Ivt">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGc-xd-Rwe">
-                        <rect key="frame" x="238" y="26" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeCellColorToday:" target="-2" id="bnC-oP-6ty"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-JI-UKC">
-                        <rect key="frame" x="300" y="29" width="125" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cell Color Today" id="I4S-p2-Mxj">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-WU-RX9">
-                        <rect key="frame" x="549" y="92" width="121" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" title="Monday" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WJO-Ve-EH4" id="HEv-Ag-qwx">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="aBl-qI-pdn">
-                                <items>
-                                    <menuItem title="Monday" state="on" id="WJO-Ve-EH4"/>
-                                    <menuItem title="Tuesday" id="Mq6-0A-QZh"/>
-                                    <menuItem title="Wednesday" id="VGW-Kg-0W1"/>
-                                    <menuItem title="Thursday" id="K21-NP-TVe">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="Friday" id="7AL-IJ-0fW">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="Saturday" id="cU5-xx-G4t">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="Sunday" id="EIL-ne-QOw">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <action selector="changeBeginWeek:" target="-2" id="6Ye-SB-UqX"/>
-                        </connections>
-                    </popUpButton>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhm-UK-4EV">
-                        <rect key="frame" x="20" y="63" width="44" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="changeBorderDefaultColor:" target="-2" id="tjN-4o-QJn"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlA-TG-ImV">
-                        <rect key="frame" x="70" y="63" width="138" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="border Default Color" id="bGD-9B-Amb">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yza-oD-Emx" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="AZS-0e-5zg"/>
+                    <constraint firstItem="yza-oD-Emx" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="74" id="AZS-0e-5zg"/>
                     <constraint firstItem="yza-oD-Emx" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="Cf0-qh-wFt"/>
                     <constraint firstAttribute="trailing" secondItem="yza-oD-Emx" secondAttribute="trailing" id="JuZ-Hq-pKc"/>
-                    <constraint firstAttribute="bottom" secondItem="yza-oD-Emx" secondAttribute="bottom" constant="150" id="b2x-Se-amh"/>
+                    <constraint firstAttribute="bottom" secondItem="yza-oD-Emx" secondAttribute="bottom" constant="96" id="b2x-Se-amh"/>
                 </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="FD98239C-F99D-4CFE-B4E5-6748527E9A46" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="YSW-6G-DVg">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="6BD73365-64E4-441C-8469-1C9711B0DA43" label="cell Color Today" paletteLabel="cell Color Today" id="vf8-8Q-TDC">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" id="PGc-xd-Rwe">
+                            <rect key="frame" x="24" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeCellColorToday:" target="-2" id="bnC-oP-6ty"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="A2B2FF5D-5197-43AF-BBC1-9A9631A14047" label="cell Color Default" paletteLabel="cell Color Default" id="GLn-C6-wkQ">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" id="ccW-xj-O9r">
+                            <rect key="frame" x="27" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeCellColor:" target="-2" id="Obc-GM-fY5"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C64EA600-468E-4FBB-9C43-4D3DD9FF3A7C" label="backgroundColors" paletteLabel="backgroundColors" id="fSj-dp-3Lw">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" id="jgk-AL-YMj">
+                            <rect key="frame" x="30" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeBackgroundColors:" target="-2" id="qBP-Sr-0e9"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="7375C9D7-CD99-4659-84AF-19FA16246D95" label="Begin Week" paletteLabel="Begin Week" id="GzP-pY-KPO">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="121" height="26"/>
+                        <size key="maxSize" width="121" height="26"/>
+                        <popUpButton key="view" verticalHuggingPriority="750" id="bTU-WU-RX9">
+                            <rect key="frame" x="0.0" y="14" width="121" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButtonCell key="cell" type="push" title="Monday" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WJO-Ve-EH4" id="HEv-Ag-qwx">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="aBl-qI-pdn">
+                                    <items>
+                                        <menuItem title="Monday" state="on" id="WJO-Ve-EH4"/>
+                                        <menuItem title="Tuesday" id="Mq6-0A-QZh"/>
+                                        <menuItem title="Wednesday" id="VGW-Kg-0W1"/>
+                                        <menuItem title="Thursday" id="K21-NP-TVe">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Friday" id="7AL-IJ-0fW">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Saturday" id="cU5-xx-G4t">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Sunday" id="EIL-ne-QOw">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="changeBeginWeek:" target="-2" id="6Ye-SB-UqX"/>
+                            </connections>
+                        </popUpButton>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E06C9814-B56F-4A37-A474-DCD9DD95F74E" label="Border Default" paletteLabel="Border Default" id="UYm-JW-Lxe">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" id="qhm-UK-4EV">
+                            <rect key="frame" x="20" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeBorderDefaultColor:" target="-2" id="tjN-4o-QJn"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="41F9C547-6493-4DE3-A91E-65EDB1EAA02E" label="Border Select" paletteLabel="Border Select" id="zQ1-y1-ufl">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" id="cM4-38-dZ9">
+                            <rect key="frame" x="18" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeBorderSelectColor:" target="-2" id="hzm-gt-YIa"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C2209A90-8307-453B-9D8B-A43814822FC2" label="Color Text" paletteLabel="Color Text" toolTip="Change Color Text" id="gdW-qQ-0R5" userLabel="Color Text">
+                        <size key="minSize" width="44" height="23"/>
+                        <size key="maxSize" width="44" height="23"/>
+                        <colorWell key="view" identifier="ColorText" id="jfU-q5-osk">
+                            <rect key="frame" x="9" y="14" width="44" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changeColorText:" target="-2" id="G8p-16-Q1q"/>
+                            </connections>
+                        </colorWell>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Zky-Dg-gpk"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="zLy-Ar-DgR"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="qD0-Pi-STH"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="MiY-MY-h2u"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="UkM-84-w5j"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="zQ1-y1-ufl"/>
+                    <toolbarItem reference="gdW-qQ-0R5"/>
+                    <toolbarItem reference="UYm-JW-Lxe"/>
+                    <toolbarItem reference="MiY-MY-h2u"/>
+                    <toolbarItem reference="fSj-dp-3Lw"/>
+                    <toolbarItem reference="GLn-C6-wkQ"/>
+                    <toolbarItem reference="vf8-8Q-TDC"/>
+                    <toolbarItem reference="UkM-84-w5j"/>
+                    <toolbarItem reference="GzP-pY-KPO"/>
+                    <toolbarItem reference="qD0-Pi-STH"/>
+                </defaultToolbarItems>
+            </toolbar>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>

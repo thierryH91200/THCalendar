@@ -26,6 +26,10 @@ class THDateItem: NSCollectionViewItem {
     
     override var isSelected: Bool {
         didSet {
+            if backgroundViewLayer?.isHidden == true
+            {
+                return
+            }
             updateStyles()
             backgroundViewLayer?.borderWidth = isSelected ? 2.0 : 1.0
             
@@ -39,7 +43,7 @@ class THDateItem: NSCollectionViewItem {
                 dateFormatter.timeStyle = .none
                 let strDate = dateFormatter.string(from: dateItem)
                 
-                print("Date : \(strDate), Event : \(event)")
+                print("Date : \(strDate), for Event : \(event)")
             }
         }
     }
@@ -47,6 +51,17 @@ class THDateItem: NSCollectionViewItem {
     var dateItem : Date  = Date() {
         didSet {
 //            print(dateItem)
+        }
+    }
+    
+    var isHidden : Bool = false {
+        didSet {
+            if isHidden == true {
+                dateField.isHidden = isHidden
+                circleLayer?.isHidden = isHidden
+                dotLayer?.isHidden = isHidden
+                backgroundViewLayer?.isHidden = isHidden
+            }
         }
     }
     
@@ -64,7 +79,7 @@ class THDateItem: NSCollectionViewItem {
             dateField.alphaValue = inCurrentMonth ? 1.0 : 0.3
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -72,12 +87,13 @@ class THDateItem: NSCollectionViewItem {
     
     func configure(day: Int, inCurrentMonth: Bool) {
         
+        self.inCurrentMonth = inCurrentMonth
+        
         dateField.stringValue = "\(day)"
         dateField.textColor = preferences.calendar.textColor
         dateField.alignment = .center
+        dateField.isHidden = false
 
-        self.inCurrentMonth = inCurrentMonth
-        
         view.wantsLayer = true
         view.layer?.sublayers?.forEach { $0.removeFromSuperlayer() }
         
@@ -125,7 +141,7 @@ class THDateItem: NSCollectionViewItem {
         frame = frame.insetBy(dx: 3.0, dy: 3.0)
         
         backgroundViewLayer?.frame = frame
-        backgroundViewLayer?.cornerRadius = 4.0
+        backgroundViewLayer?.cornerRadius = 0//4.0
         backgroundViewLayer?.backgroundColor = THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
         
         backgroundViewLayer?.borderColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
