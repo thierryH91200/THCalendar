@@ -37,13 +37,13 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         
         setUpLayoutConstraints(item: vc, toItem: myView)
         
-        backgroundColors.color = THCalendarView.globalPreferences.calendar.backgroundColors
+        backgroundColors.color   = THCalendarView.globalPreferences.calendar.backgroundColors
         borderDefaultColor.color = THCalendarView.globalPreferences.calendar.borderDefaultColor
-        borderSelectColor.color = THCalendarView.globalPreferences.calendar.borderSelectColor
-        cellColor.color = THCalendarView.globalPreferences.calendar.cellColorDefault
-        cellColorToday.color = THCalendarView.globalPreferences.calendar.cellColorToday
-        colorText.color = THCalendarView.globalPreferences.calendar.textColor
-        hideShowCell.state = THCalendarView.globalPreferences.calendar.isHidden == true ? .on : .off
+        borderSelectColor.color  = THCalendarView.globalPreferences.calendar.borderSelectColor
+        cellColor.color          = THCalendarView.globalPreferences.calendar.cellColorDefault
+        cellColorToday.color     = THCalendarView.globalPreferences.calendar.cellColorToday
+        colorText.color          = THCalendarView.globalPreferences.calendar.textColor
+        hideShowCell.state       = THCalendarView.globalPreferences.calendar.isHidden == true ? .on : .off
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
