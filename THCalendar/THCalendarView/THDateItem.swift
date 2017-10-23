@@ -56,7 +56,7 @@ class THDateItem: NSCollectionViewItem {
     
     var isHidden : Bool = false {
         didSet {
-            if isHidden == true {
+            if isHidden == true && inCurrentMonth == false {
                 dateField.isHidden = isHidden
                 circleLayer?.isHidden = isHidden
                 dotLayer?.isHidden = isHidden

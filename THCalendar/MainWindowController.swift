@@ -18,6 +18,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     @IBOutlet weak var cellColor: NSColorWell!
     @IBOutlet weak var cellColorToday: NSColorWell!
     @IBOutlet weak var colorText: NSColorWell!
+    @IBOutlet weak var hideShowCell: NSButton!
     
     @IBOutlet weak var weekPop: NSPopUpButton!
     
@@ -42,6 +43,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         cellColor.color = THCalendarView.globalPreferences.calendar.cellColorDefault
         cellColorToday.color = THCalendarView.globalPreferences.calendar.cellColorToday
         colorText.color = THCalendarView.globalPreferences.calendar.textColor
+        hideShowCell.state = THCalendarView.globalPreferences.calendar.isHidden == true ? .on : .off
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
@@ -117,6 +119,12 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     {
         let menuItem =  weekPop.indexOfSelectedItem == 6 ? weekPop.indexOfSelectedItem : 5 - weekPop.indexOfSelectedItem
         THCalendarView.globalPreferences.calendar.beginWeek = THCalendarView.weekDisplay(rawValue: menuItem)!
+        viewController.calendarView.collectionView.reloadData()
+    }
+    @IBAction func changeHideCell(_ sender: NSButton) {
+        
+        let check = sender.state == .on
+        THCalendarView.globalPreferences.calendar.isHidden = check
         viewController.calendarView.collectionView.reloadData()
     }
 }
