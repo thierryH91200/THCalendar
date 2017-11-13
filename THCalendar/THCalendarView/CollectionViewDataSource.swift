@@ -31,7 +31,7 @@ extension THCalendarView: NSCollectionViewDataSource {
         
         var item: NSCollectionViewItem
         let calendar = Calendar.current
-
+        
         switch Section(rawValue: indexPath.section)! {
         case .month:
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THMonthItem"), for: indexPath)
@@ -65,6 +65,7 @@ extension THCalendarView: NSCollectionViewDataSource {
                 }
                 item.configure(day: day, inCurrentMonth: inMonth)
                 
+                // custom your event
                 if let events = events, inMonth {
                     item.event = events[day - 1]
                 } else {
@@ -81,6 +82,7 @@ extension THCalendarView: NSCollectionViewDataSource {
                     item.isToday = false
                 }
                 
+                // current date
                 var dateComponents = DateComponents()
                 dateComponents.year = year
                 dateComponents.month = month

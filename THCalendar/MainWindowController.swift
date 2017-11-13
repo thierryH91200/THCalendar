@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController , NSWindowDelegate{
+class MainWindowController: NSWindowController , NSWindowDelegate {
     
     @IBOutlet weak var myView: NSView!
     
@@ -24,7 +24,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     
     var delegate: AppDelegate?
     var viewController      = ViewController()
-        
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -46,6 +46,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
     
     func addSubview(subView:NSView, toView parentView : NSView)
     {
+        
         let myView = parentView.subviews
         if myView.count > 0
         {
@@ -119,6 +120,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate{
         THCalendarView.globalPreferences.calendar.beginWeek = THCalendarView.weekDisplay(rawValue: menuItem)!
         viewController.calendarView.collectionView.reloadData()
     }
+    
     @IBAction func changeHideCell(_ sender: NSButton) {
         
         let check = sender.state == .on

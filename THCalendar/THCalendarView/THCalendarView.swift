@@ -127,14 +127,15 @@ class THCalendarView: NSViewController {
         goToMonthWithOffet(1)
     }
     
-    func goToMonthWithOffet(_ offet:Int){
+    func goToMonthWithOffet(_ offet:Int) {
         
-        if let newDate = (date.applyOffSetOfMonth( offset: offet)){
+        if let newDate = (date.applyOffSetOfMonth( offset: offet)) {
             date = newDate
             selectedDate = newDate
             collectionView.reloadData()
         }
     }
+    
 }
 
 extension THCalendarView: NSCollectionViewDelegate {

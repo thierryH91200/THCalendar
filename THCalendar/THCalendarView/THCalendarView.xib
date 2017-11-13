@@ -30,7 +30,6 @@
                                     <size key="itemSize" width="50" height="50"/>
                                 </collectionViewFlowLayout>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <color key="secondaryBackgroundColor" name="controlAlternatingRowColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
                                     <outlet property="dataSource" destination="-2" id="UGF-BF-6qX"/>
                                     <outlet property="delegate" destination="-2" id="zJL-8N-yMJ"/>

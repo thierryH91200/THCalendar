@@ -38,5 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController?.showWindow(self)
         
     }
+    
 }
 
