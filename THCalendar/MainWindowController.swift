@@ -9,7 +9,7 @@
 import Cocoa
 
 class MainWindowController: NSWindowController , NSWindowDelegate {
-    
+
     @IBOutlet weak var myView: NSView!
     
     @IBOutlet weak var backgroundColors: NSColorWell!
@@ -46,7 +46,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func addSubview(subView:NSView, toView parentView : NSView)
     {
-        
         let myView = parentView.subviews
         if myView.count > 0
         {

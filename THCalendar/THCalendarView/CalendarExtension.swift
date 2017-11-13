@@ -15,7 +15,7 @@ extension Calendar {
         }
         return year
     }
-    
+
     public func month(_ date: Date) -> Int {
         guard let month = dateComponents([.month], from: date).month else {
             fatalError()
@@ -72,4 +72,5 @@ extension Calendar {
     public func numberOfWeeksInMonthForDate(_ date: Date) -> Int {
         return range(of: .weekOfMonth, in: .month, for: date)?.count ?? 0
     }
+
 }
