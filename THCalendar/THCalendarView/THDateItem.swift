@@ -141,7 +141,7 @@ class THDateItem: NSCollectionViewItem {
         frame = frame.insetBy(dx: 3.0, dy: 3.0)
         
         backgroundViewLayer?.frame = frame
-        backgroundViewLayer?.cornerRadius = 0//4.0
+        backgroundViewLayer?.cornerRadius = 0                   //4.0
         backgroundViewLayer?.backgroundColor = THCalendarView.globalPreferences.calendar.cellColorDefault.cgColor
         
         backgroundViewLayer?.borderColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
@@ -156,4 +156,5 @@ class THDateItem: NSCollectionViewItem {
         
         circleLayer?.isHidden = !isSelected
     }
+    
 }

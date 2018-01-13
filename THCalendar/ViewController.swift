@@ -11,7 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet weak var containerView: NSView!
-    
+
     let calendarView = THCalendarView()
 
     override func viewDidLoad() {
@@ -47,8 +47,8 @@ class ViewController: NSViewController {
         calendarView.events = generateEvents()
     }
     
-    func setUpLayoutConstraints(item : NSView, toItem: NSView)
-    {
+    func setUpLayoutConstraints(item : NSView, toItem: NSView) {
+        
         item.translatesAutoresizingMaskIntoConstraints = false
         let sourceListLayoutConstraints = [
             NSLayoutConstraint(item: item, attribute: .left, relatedBy: .equal, toItem: toItem, attribute: .left, multiplier: 1, constant: 0),

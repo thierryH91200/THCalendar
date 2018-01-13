@@ -157,6 +157,7 @@ extension THCalendarView: NSCollectionViewDelegateFlowLayout {
         case .date:
             size = NSMakeSize(width / 7, 50 )
         }
+
         return size
     }
     
