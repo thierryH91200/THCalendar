@@ -1,3 +1,7 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/thierryH91200/THCalendar?branch=master)](https://bettercodehub.com/)
+
+
+
 # THCalendar
 
 
