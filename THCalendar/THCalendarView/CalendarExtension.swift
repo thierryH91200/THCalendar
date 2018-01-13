@@ -23,7 +23,7 @@ extension Calendar {
         }
         return month
     }
-    
+
     public func day(_ date: Date) -> Int {
         guard let day = dateComponents([.day], from: date).day else {
             fatalError()
@@ -93,5 +93,3 @@ extension Date {
         return tomorrow.month != month
     }
 }
-
-

@@ -19,7 +19,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     @IBOutlet weak var cellColorToday: NSColorWell!
     @IBOutlet weak var colorText: NSColorWell!
     @IBOutlet weak var hideShowCell: NSButton!
-    
+
     @IBOutlet weak var weekPop: NSPopUpButton!
     
     var delegate: AppDelegate?
@@ -44,8 +44,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         hideShowCell.state       = THCalendarView.globalPreferences.calendar.isHidden == true ? .on : .off
     }
     
-    func addSubview(subView:NSView, toView parentView : NSView)
-    {
+    func addSubview(subView:NSView, toView parentView : NSView) {
         let myView = parentView.subviews
         if myView.count > 0
         {
