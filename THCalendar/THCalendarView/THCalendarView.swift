@@ -18,14 +18,14 @@ class THCalendarView: NSViewController {
     public struct Preferences {
 
         public struct Calendar {
-            public var textColor = NSColor.darkGray
-            public var cellColorDefault = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-            public var cellColorToday = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-            public var borderSelectColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-            public var borderDefaultColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            public var backgroundColors = #colorLiteral(red: 0.4755474925, green: 0.8375863433, blue: 0.97578758, alpha: 1)
+            public var textColor               = NSColor.darkGray
+            public var cellColorDefault        = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+            public var cellColorToday          = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            public var borderSelectColor       = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            public var borderDefaultColor      = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            public var backgroundColors        = #colorLiteral(red: 0.4755474925, green: 0.8375863433, blue: 0.97578758, alpha: 1)
             public var beginWeek : weekDisplay = .monday
-            public var isHidden = false
+            public var isHidden                = false
         }
     
         public struct Date {
@@ -41,13 +41,13 @@ class THCalendarView: NSViewController {
     
     enum weekDisplay : Int {
         
-        case sunday = 6
-        case monday = 5
-        case tuesday = 4
+        case sunday    = 6
+        case monday    = 5
+        case tuesday   = 4
         case wednesday = 3
-        case thursday = 2
-        case friday = 1
-        case saturday = 0
+        case thursday  = 2
+        case friday    = 1
+        case saturday  = 0
     }
     
     // Today
@@ -105,7 +105,7 @@ class THCalendarView: NSViewController {
             let weekDay = calendar.component(.weekday, from: start)
             
             let item = weekDay + calendar.day(selectedDate) - 2
-            let index = IndexPath(item: item, section: Section.date.rawValue)
+            let index = IndexPath(item: item, section: Section.date.rawValue )
             return index
         }
         return nil

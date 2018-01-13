@@ -59,6 +59,10 @@ extension THCalendarView: NSCollectionViewDataSource {
             
             if let item = item as? THDateItem {
                 var beginWeek = THCalendarView.globalPreferences.calendar.beginWeek.rawValue + 1
+                if beginWeek  == 6
+                {
+                    beginWeek = -1
+                }
                 if beginWeek  == 7
                 {
                     beginWeek = 0
