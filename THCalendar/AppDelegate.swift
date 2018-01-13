@@ -12,10 +12,9 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    
+
     var mainWindowController: MainWindowController?
 
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         initializeLibraryAndShowMainWindow()
@@ -35,8 +34,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         mainWindowController?.delegate = self
         mainWindowController?.showWindow(self)
-        
     }
     
 }
-

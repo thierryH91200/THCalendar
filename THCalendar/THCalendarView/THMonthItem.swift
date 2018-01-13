@@ -18,7 +18,7 @@ class THMonthItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
+
         let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.lineBreakMode = .byTruncatingTail
         paragraphStyle.alignment = .center
@@ -33,7 +33,7 @@ class THMonthItem: NSCollectionViewItem {
     }
     
     func configure(month: String, year: Int) {
-        
+
         let month = String(month.prefix(1)).uppercased() + String(month.dropFirst())
         let title = NSMutableAttributedString(string: month, attributes: attributesMonth )
         let yearTitle = NSAttributedString(string: "  \(year)", attributes : attributesYear )
@@ -42,4 +42,5 @@ class THMonthItem: NSCollectionViewItem {
         
         monthField.attributedStringValue = title
     }
+    
 }

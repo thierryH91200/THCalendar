@@ -46,13 +46,11 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func addSubview(subView:NSView, toView parentView : NSView) {
         let myView = parentView.subviews
-        if myView.count > 0
-        {
+        if myView.count > 0 {
             parentView.replaceSubview(myView[0], with: subView)
             print("replace View : ", subView)
         }
-        else
-        {
+        else {
             parentView.addSubview(subView)
             print("add View : ", subView)
         }

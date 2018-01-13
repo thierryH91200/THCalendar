@@ -12,5 +12,4 @@ class THCalendar {
 
     static let Week:[String] = DateFormatter().shortWeekdaySymbols as [String]
     static let Month:[String] = DateFormatter().monthSymbols as [String]
-    
 }
