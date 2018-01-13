@@ -22,4 +22,5 @@ class THWeekItem: NSCollectionViewItem {
         weekField.textColor = THCalendarView.globalPreferences.calendar.textColor
         weekField.alignment = .right
     }
+    
 }

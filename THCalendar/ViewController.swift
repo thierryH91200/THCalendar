@@ -9,7 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    
+
     @IBOutlet weak var containerView: NSView!
     
     let calendarView = THCalendarView()
@@ -69,4 +69,5 @@ class ViewController: NSViewController {
         }
         return events
     }
+    
 }

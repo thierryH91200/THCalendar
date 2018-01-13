@@ -11,7 +11,7 @@ import Cocoa
 class MainWindowController: NSWindowController , NSWindowDelegate {
 
     @IBOutlet weak var myView: NSView!
-    
+
     @IBOutlet weak var backgroundColors: NSColorWell!
     @IBOutlet weak var borderDefaultColor: NSColorWell!
     @IBOutlet weak var borderSelectColor: NSColorWell!
@@ -126,4 +126,5 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         THCalendarView.globalPreferences.calendar.isHidden = check
         viewController.calendarView.collectionView.reloadData()
     }
+    
 }

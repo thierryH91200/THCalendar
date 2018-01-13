@@ -14,7 +14,7 @@ class THMonthItem: NSCollectionViewItem {
 
     var attributesMonth = [NSAttributedStringKey: AnyObject]()
     var attributesYear = [NSAttributedStringKey: AnyObject]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

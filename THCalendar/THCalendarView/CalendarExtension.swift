@@ -9,6 +9,7 @@
 import Foundation
 
 extension Calendar {
+
      func year(_ date: Date) -> Int {
         guard let year = dateComponents([.year], from: date).year else {
             fatalError()
