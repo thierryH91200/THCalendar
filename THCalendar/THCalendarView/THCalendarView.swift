@@ -10,11 +10,11 @@ import Cocoa
 
 
 class THCalendarView: NSViewController {
-    
+
     @IBOutlet weak var collectionView: NSCollectionView!
-    
+
     public static var globalPreferences = Preferences()
-    
+
     public struct Preferences {
 
         public struct Calendar {
@@ -27,15 +27,15 @@ class THCalendarView: NSViewController {
             public var beginWeek : weekDisplay = .monday
             public var isHidden                = false
         }
-    
+
         public struct Date {
             public var circleBackgroundColor = NSColor.red
             public var dotColor = NSColor.blue
         }
-    
+
         var calendar = Calendar()
         var date = Date()
-    
+
         public init() {}
     }
     
@@ -49,7 +49,7 @@ class THCalendarView: NSViewController {
         case friday    = 1
         case saturday  = 0
     }
-    
+
     // Today
     var date = Date()
     // Selected Date
@@ -58,21 +58,21 @@ class THCalendarView: NSViewController {
             selectSelectedDateItem()
         }
     }
-    
+
     public var events: [Int]?
     
     enum Section: Int {
         case month = 0, week, date
     }
-    
+
     public init() {
         super.init(nibName: NSNib.Name(rawValue: "THCalendarView"), bundle: Bundle(for: THCalendarView.self))
     }
-    
+
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -80,7 +80,7 @@ class THCalendarView: NSViewController {
         let colorBackGround = THCalendarView.globalPreferences.calendar.backgroundColors
         collectionView.backgroundColors =  [colorBackGround]
     }
-    
+
     override func viewWillLayout() {
         super.viewWillLayout()
         
@@ -89,15 +89,15 @@ class THCalendarView: NSViewController {
         collectionView.collectionViewLayout?.invalidateLayout()
         collectionView.reloadData()
     }
-    
+
     func selectSelectedDateItem() {
 //        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
 //            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
 //        }
     }
-    
+
     func indexPathForDate(selectedDate: Date) -> IndexPath? {
-        
+
         let calendar = Calendar.current
         
         if calendar.month(date) == calendar.month(selectedDate) {
@@ -110,7 +110,7 @@ class THCalendarView: NSViewController {
         }
         return nil
     }
-    
+
     @IBAction func previousMonth(_ sender: Any) {
         goToMonthWithOffet(-1)
     }
@@ -122,11 +122,11 @@ class THCalendarView: NSViewController {
         
         collectionView.reloadData()
     }
-    
+
     @IBAction func nextMonth(_ sender: Any) {
         goToMonthWithOffet(1)
     }
-    
+
     func goToMonthWithOffet(_ offet:Int) {
         
         if let newDate = (date.applyOffSetOfMonth( offset: offet)) {
@@ -135,7 +135,7 @@ class THCalendarView: NSViewController {
             collectionView.reloadData()
         }
     }
-    
+
 }
 
 extension THCalendarView: NSCollectionViewDelegate {
@@ -145,10 +145,10 @@ extension THCalendarView: NSCollectionViewDelegate {
 extension THCalendarView: NSCollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        
+
         let width = collectionView.bounds.width
         var size = NSSize()
-        
+
         switch Section(rawValue: indexPath.section)! {
         case .month:
             size =  NSMakeSize(width, 50)
@@ -160,27 +160,26 @@ extension THCalendarView: NSCollectionViewDelegateFlowLayout {
 
         return size
     }
-    
+
 }
 
 extension Date {
     
     func applyOffSetOfMonth( offset:Int) -> Date? {
-        
+
         var dateComponents = DateComponents()
         dateComponents.month = offset
-        
+
         return Calendar.current.date(  byAdding: dateComponents, to: self, wrappingComponents: false)
     }
 }
 
 // just for the debug
 extension NSView {
-    
+
     override open var description: String {
         let id = identifier?._rawValue
         return "id: \(String(describing: id!))"
     }
 }
-
 

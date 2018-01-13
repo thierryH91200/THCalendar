@@ -30,19 +30,19 @@ extension Calendar {
         }
         return day
     }
-    
+
     public func endOfDayForDate(_ date: Date) -> Date {
         var comps = dateComponents([.year, .month, .day], from: self.date(byAdding: .day, value: 1, to: date)!)
         comps.second = -1
         return self.date(from: comps)!
     }
-    
+
     public func startOfMonthForDate(_ date: Date) -> Date {
         var comp = self.dateComponents([.year, .month, .day], from: date)
         comp.day = 1
         return self.date(from: comp)!
     }
-    
+
     public func endOfMonthForDate(_ date: Date) -> Date {
         var comp = self.dateComponents([.year, .month, .day], from: date)
         if let month = comp.month {
@@ -51,14 +51,14 @@ extension Calendar {
         comp.day = 0
         return self.date(from: comp)!
     }
-    
+
     public func nextStartOfMonthForDate(_ date: Date) -> Date {
         let firstDay = startOfMonthForDate(date)
         var comp = DateComponents()
         comp.month = 1
         return self.date(byAdding: comp, to: firstDay)!
     }
-    
+
     public func prevStartOfMonthForDate(_ date: Date) -> Date {
         let firstDay = startOfMonthForDate(date)
         var comp = DateComponents()
@@ -69,7 +69,7 @@ extension Calendar {
     public func numberOfDaysInMonthForDate(_ date: Date) -> Int {
         return range(of: .day, in: .month, for: date)?.count ?? 0
     }
-    
+
     public func numberOfWeeksInMonthForDate(_ date: Date) -> Int {
         return range(of: .weekOfMonth, in: .month, for: date)?.count ?? 0
     }
@@ -92,4 +92,5 @@ extension Date {
     var isLastDayOfMonth: Bool {
         return tomorrow.month != month
     }
+
 }

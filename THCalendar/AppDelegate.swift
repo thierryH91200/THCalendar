@@ -19,15 +19,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         initializeLibraryAndShowMainWindow()
     }
-    
+
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-    
+
     func applicationShouldTerminateAfterLastWindowClosed (_ sender: NSApplication) -> Bool {
         return true
     }
-    
+
     func initializeLibraryAndShowMainWindow() {
         
         mainWindowController = MainWindowController(windowNibName: NSNib.Name(rawValue: "MainWindowController"))
@@ -35,5 +35,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController?.delegate = self
         mainWindowController?.showWindow(self)
     }
-    
+
 }
