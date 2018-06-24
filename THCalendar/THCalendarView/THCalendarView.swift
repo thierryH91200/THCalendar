@@ -178,7 +178,7 @@ extension Date {
 extension NSView {
 
     override open var description: String {
-        let id = identifier?._rawValue
+        let id = identifier?.rawValue
         return "id: \(String(describing: id!))"
     }
 }

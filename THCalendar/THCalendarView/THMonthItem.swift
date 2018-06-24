@@ -12,8 +12,8 @@ class THMonthItem: NSCollectionViewItem {
 
     @IBOutlet weak var monthField: NSTextField!
 
-    var attributesMonth = [NSAttributedStringKey: AnyObject]()
-    var attributesYear = [NSAttributedStringKey: AnyObject]()
+    var attributesMonth = [NSAttributedString.Key: AnyObject]()
+    var attributesYear = [NSAttributedString.Key: AnyObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,13 @@ class THMonthItem: NSCollectionViewItem {
         paragraphStyle.lineBreakMode = .byTruncatingTail
         paragraphStyle.alignment = .center
 
-        attributesMonth[.foregroundColor] = NSColor.white
-        attributesMonth[.font] = NSFont(name: "Helvetica", size: 20.0)
-        attributesMonth[.paragraphStyle] = paragraphStyle
+        attributesMonth[NSAttributedString.Key.foregroundColor] = NSColor.white
+        attributesMonth[NSAttributedString.Key.font] = NSFont(name: "Helvetica", size: 20.0)
+        attributesMonth[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         
-        attributesYear[.foregroundColor] = NSColor.red
-        attributesYear[.font] = NSFont(name: "Helvetica", size: 20.0)
-        attributesYear[.paragraphStyle] = paragraphStyle
+        attributesYear[NSAttributedString.Key.foregroundColor] = NSColor.red
+        attributesYear[NSAttributedString.Key.font] = NSFont(name: "Helvetica", size: 20.0)
+        attributesYear[NSAttributedString.Key.paragraphStyle] = paragraphStyle
     }
     
     func configure(month: String, year: Int) {

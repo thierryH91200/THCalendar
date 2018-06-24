@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         THCalendarView.globalPreferences.date.dotColor               = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
         // Step 2 - Add calendar to view hierarchy
-        addChildViewController(calendarView)
+        addChild(calendarView)
         calendarView.view.frame = containerView.frame
         view.addSubview(calendarView.view)
         print("add View : ", calendarView.view)
