@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func initializeLibraryAndShowMainWindow() {
         
-        mainWindowController = MainWindowController(windowNibName: NSNib.Name(rawValue: "MainWindowController"))
+        mainWindowController = MainWindowController(windowNibName: NSNib.Name( "MainWindowController"))
         
         mainWindowController?.delegate = self
         mainWindowController?.showWindow(self)

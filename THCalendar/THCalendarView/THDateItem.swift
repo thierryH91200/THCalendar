@@ -26,10 +26,8 @@ class THDateItem: NSCollectionViewItem {
     
     override var isSelected: Bool {
         didSet {
-            if backgroundViewLayer?.isHidden == true
-            {
-                return
-            }
+            guard backgroundViewLayer?.isHidden != true else { return }
+            
             updateStyles()
             backgroundViewLayer?.borderWidth = isSelected ? 2.0 : 1.0
             

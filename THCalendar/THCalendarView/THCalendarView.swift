@@ -66,7 +66,7 @@ class THCalendarView: NSViewController {
     }
 
     public init() {
-        super.init(nibName: NSNib.Name(rawValue: "THCalendarView"), bundle: Bundle(for: THCalendarView.self))
+        super.init(nibName: NSNib.Name( "THCalendarView"), bundle: Bundle(for: THCalendarView.self))
     }
 
     required public init?(coder: NSCoder) {
