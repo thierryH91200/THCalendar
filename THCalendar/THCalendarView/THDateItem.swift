@@ -35,6 +35,11 @@ class THDateItem: NSCollectionViewItem {
             let borderDefaultColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
             backgroundViewLayer?.borderColor = isSelected ? borderSelectColor: borderDefaultColor
             
+//            backgroundViewLayer?.shadowColor = NSColor.black.cgColor
+//            backgroundViewLayer?.shadowOffset = NSMakeSize(0.5, 0.4)
+//            backgroundViewLayer?.shadowRadius = 5.0
+//            backgroundViewLayer?.shadowOpacity = 0.50
+
             if isSelected == true {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .medium

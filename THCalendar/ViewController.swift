@@ -24,8 +24,8 @@ class ViewController: NSViewController {
         THCalendarView.globalPreferences.calendar.cellColorDefault   = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         THCalendarView.globalPreferences.calendar.cellColorToday     = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         THCalendarView.globalPreferences.calendar.borderSelectColor  = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        THCalendarView.globalPreferences.calendar.borderDefaultColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        THCalendarView.globalPreferences.calendar.backgroundColors   = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        THCalendarView.globalPreferences.calendar.borderDefaultColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        THCalendarView.globalPreferences.calendar.backgroundColors   = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         THCalendarView.globalPreferences.calendar.beginWeek          = .monday
         
         THCalendarView.globalPreferences.date.circleBackgroundColor  = NSColor.red
