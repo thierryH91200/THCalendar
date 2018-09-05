@@ -35,6 +35,11 @@ class THDateItem: NSCollectionViewItem {
             let borderDefaultColor = THCalendarView.globalPreferences.calendar.borderDefaultColor.cgColor
             backgroundViewLayer?.borderColor = isSelected ? borderSelectColor: borderDefaultColor
             
+//            let gradient = CAGradientLayer()
+//            gradient.colors = [NSColor.green, NSColor.blue, NSColor.white]
+//            gradient.frame = (backgroundViewLayer?.bounds)!
+//            self.backgroundViewLayer?.layer = gradient
+            
 //            backgroundViewLayer?.shadowColor = NSColor.black.cgColor
 //            backgroundViewLayer?.shadowOffset = NSMakeSize(0.5, 0.4)
 //            backgroundViewLayer?.shadowRadius = 5.0
@@ -153,6 +158,13 @@ class THDateItem: NSCollectionViewItem {
         backgroundViewLayer?.anchorPoint = CGPoint(x : 0.5, y : 0.5)
         backgroundViewLayer?.position =  CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
         view.layer?.addSublayer(backgroundViewLayer!)
+        view.wantsLayer = true
+        
+//        let gradient = CAGradientLayer()
+//        gradient.colors = [NSColor.blue, NSColor.lightGray, NSColor.red]
+//        gradient.frame = (backgroundViewLayer?.bounds)!
+//        self.view.layer = gradient
+
     }
     
     private func updateStyles() {
